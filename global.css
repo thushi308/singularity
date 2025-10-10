@@ -20,7 +20,7 @@
 
     --section-odd-background-color: #0c0a1a;
     --section-even-background-color: #0c0a1a;
-    --section-padding: 20px;
+    --section-padding: 1.4rem;
 
     --card-border-radius: 0 0 5px 5px;
     --card-background-color: #221c48;
@@ -28,6 +28,9 @@
     --card-page-link-color: #ff7518;
     --card-page-link-hover-color: #3b4e6c;
     --card-page-link-transition: all 0.3s ease-in-out;
+    --cards-container-scrollbar-color: #3a317a;
+    /* --cards-container-scrollbar-color: linear-gradient(to right, hsl(from var(--accent-color-1) calc(h + 5) s calc(l - 20)), hsl(from var(--section-even-background-color) calc(h - 5) s calc(l + 10))); */
+    --cards-container-scrollbar-width: calc((6 / 16) * 1rem);
 
     --call-to-action-padding: 10px 20px;
     --call-to-action-background-color: #ff7518;
@@ -119,14 +122,14 @@ section > .section-header > p {
 }
 
 .hero-section > div > p {
-    padding: 20px;
+    padding: 1.3rem;
 }
 
 .hero-section > div > .credits {
     position: absolute;
     bottom: 0;
     right: 0;
-    padding: 10px;
+    padding: 0.8rem;
 }
 
 .about-section {
@@ -161,7 +164,28 @@ section > .section-header > p {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 20px;
-    padding: min(2%, 20px);
+    padding: min(2%, 1.5rem);
+}
+
+.cards-container::-webkit-scrollbar {
+    height: var(--cards-container-scrollbar-width);
+}
+
+.cards-container::-webkit-scrollbar-track{
+    background: var(--section-even-background-color);
+    border-radius: 9999px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: var(--cards-container-scrollbar-color);
+    border-radius: 9999px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .cards-container {
+        scrollbar-color: var(--accent-color-2) var(--section-even-background-color);
+        scrollbar-width: thin;
+    }
 }
 
 .card {
@@ -181,7 +205,7 @@ section > .section-header > p {
 .card > .card-img-container {
     height: calc(300px * (9/16));
     width: 100%;
-    padding: 0px 0px;
+    padding: 0 0;
     position: relative;
 }
 
@@ -209,7 +233,7 @@ section > .section-header > p {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 5px 10px;
+    padding: calc((5 / 16) * 1rem) calc((10 / 16) * 1rem);
 }
 
 .card-title-date-container > div {
@@ -217,7 +241,7 @@ section > .section-header > p {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 5px 10px;
+    padding: calc((5 / 16) * 1rem) calc((10 / 16) * 1rem);
     display: flex;
     flex-direction: column;
 }
@@ -233,7 +257,7 @@ section > .section-header > p {
     font-size: 1rem;
     line-height: 0.6rem;
     transform: scaleY(0.7);
-    padding-left: 1px;
+    padding-left: calc(1rem / 16);
     color: var(--accent-color-1);
 }
 
@@ -248,6 +272,7 @@ section > .section-header > p {
 
 section > div:has(.call-to-action) {
     text-align: center;
+    padding: 1rem;
 }
 
 .call-to-action {
@@ -271,23 +296,35 @@ footer {
     background-color: var(--footer-background-color);
 }
 
-footer > div:first-child {
+footer > div {
+    display: flex;
+    flex-direction: column;
+}
+
+footer > div > .social-media-handles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 0px;
-    min-width: 120px;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
 }
 
-footer > div > .social-media-handles, footer > div > .quick-links {
-    flex: 1 1 120px; 
+footer > div > .social-media-handles >:first-child {
+    width: 100%;
+}
+
+footer > div > .quick-links {
+    /* display: flex;
+    flex-direction: column; */
+    flex: 1 1 80px; 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     grid-template-rows: auto;
-    gap: 10px;
-    width: 50%;
-    padding: 10px;
+    /* width: 50%; */
+    gap: 1rem;
+    padding: 1rem;
 }
 
 footer > div > .social-media-handles > :first-child , footer > div > .quick-links > :first-child {
@@ -302,5 +339,6 @@ footer > div > .social-media-handles > a, footer > div > .quick-links > a {
 }
 
 footer > .copyrights {
+    padding: 1rem;
     text-align: center;
 }
