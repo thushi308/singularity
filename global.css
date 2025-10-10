@@ -4,7 +4,7 @@
     --logo-red: #e23829;
     --logo-gray: #3b4e6c; */
 
-    --primary-color-1: #ffab1a;
+    --primary-color-1: #3b4e6c;
     --primary-color-2: #ffab1a;
     --secondary-color-1: #3b4e6c;
     --secondary-color-2: #3b4e6c;
@@ -16,13 +16,14 @@
     --font-size-1: 1rem;
     --font-size-2: 1.5rem;
     --font-size-3: 2rem;
+    --text-color: #e5e5e5;
 
-    --section-odd-background-color: #ff7518;
-    --section-even-background-color: #3b4e6c;
+    --section-odd-background-color: #0c0a1a;
+    --section-even-background-color: #0c0a1a;
     --section-padding: 20px;
 
-    --card-border-radius: 5px;
-    --card-background-color: #ffffff;
+    --card-border-radius: 0 0 5px 5px;
+    --card-background-color: #221c48;
     --card-div-padding: 5px 5px;
     --card-page-link-color: #ff7518;
     --card-page-link-hover-color: #3b4e6c;
@@ -30,17 +31,17 @@
 
     --call-to-action-padding: 10px 20px;
     --call-to-action-background-color: #ff7518;
-    --call-to-action-color: #3b4e6c;
+    --call-to-action-color: var(--section-even-background-color);
     --call-to-action-border-radius: 9999px;
     --call-to-action-border: 2px solid var(--accent-color-2);
     --call-to-action-transition: all 0.3s ease-in-out;
-    --call-to-action-hover-background-color: #3b4e6c;
+    --call-to-action-hover-background-color: #0c0a1a;
     --call-to-action-hover-color: #ff7518;
 
-    --nav-background-color: #ffffff;
+    --nav-background-color: #1a1537;
     --nav-sidebar-cut-width: 1024px;
 
-    --footer-background-color: #3b4e6c;
+    --footer-background-color: #16122f;
 }
 
 * {
@@ -48,6 +49,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--primary-font);
+    color: #e5e5e5;
 }
 
 * {
@@ -81,14 +83,27 @@ section {
     background-color: var(--section-even-background-color);
     width: 100%;
     padding: var(--section-padding);
+    padding-top: 5rem;
 }
 
 main > section:nth-of-type(odd) {
     background-color: var(--section-odd-background-color);
 }
 
+section > .section-header {
+    text-align: center;
+}
+
+section > .section-header > h2 {
+    font-size: 2rem;
+}
+
+section > .section-header > p {
+    margin: 0.25rem 0;
+}
+
 .hero-section {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 70px);
     text-align: center;
     background-image: url("http://localhost/singularity website design/someimage.png");
     background-position: top left;
@@ -105,6 +120,39 @@ main > section:nth-of-type(odd) {
 
 .hero-section > div > p {
     padding: 20px;
+}
+
+.hero-section > div > .credits {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-section > div {
+    width: 50%;
+}
+
+.about-section > .section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: -webkit-fill-available;
+}
+
+.about-section > .card-img-container {
+    height: 100%;
+    object-fit: unset;
+    width: 40%;
 }
 
 .cards-container {
@@ -164,13 +212,29 @@ main > section:nth-of-type(odd) {
     padding: 5px 10px;
 }
 
-.card-title-date-container > span {
+.card-title-date-container > div {
     font-weight: bold;
-    font-size: 2rem;
     position: absolute;
     top: 0;
     right: 0;
     padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title-date-container > div > :first-child {
+    font-size: 2rem;
+    line-height: 1.5rem;
+    transform: scaleY(0.8);
+    color: var(--accent-color-1);
+}
+
+.card-title-date-container > div > :last-child {
+    font-size: 1rem;
+    line-height: 0.6rem;
+    transform: scaleY(0.7);
+    padding-left: 1px;
+    color: var(--accent-color-1);
 }
 
 .card-page-link {
@@ -180,6 +244,10 @@ main > section:nth-of-type(odd) {
 
 .card-page-link:hover {
     color: var(--card-page-link-hover-color);
+}
+
+section > div:has(.call-to-action) {
+    text-align: center;
 }
 
 .call-to-action {
@@ -224,12 +292,12 @@ footer > div > .social-media-handles, footer > div > .quick-links {
 
 footer > div > .social-media-handles > :first-child , footer > div > .quick-links > :first-child {
     grid-column: 1 / -1;
-    color: var(--primary-color-1);
+    color: var(--accent-color-1);
 }
 
 footer > div > .social-media-handles > a, footer > div > .quick-links > a {
     text-decoration: none;
-    color: black;
+    /* color: black; */
     width: fit-content;
 }
 
