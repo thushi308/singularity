@@ -24,7 +24,7 @@
 
     --card-border-radius: 0 0 5px 5px;
     --card-background-color: #221c48;
-    --card-div-padding: 5px 5px;
+    --card-div-padding: calc((5 / 16) * 1rem) calc((10 / 16) * 1rem);
     --card-page-link-color: #ff7518;
     --card-page-link-hover-color: #3b4e6c;
     --card-page-link-transition: all 0.3s ease-in-out;
@@ -108,12 +108,13 @@ section > .section-header > p {
 .hero-section {
     min-height: calc(100vh - 70px);
     text-align: center;
-    background-image: url("http://localhost/singularity website design/someimage.png");
+    background-image: url("someimage.png");
     background-position: top left;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-attachment: fixed;
 }
 
 .hero-section > div {
@@ -148,8 +149,11 @@ section > .section-header > p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
     height: -webkit-fill-available;
+    height: -moz-available;
+    text-align: left;
 }
 
 .about-section > .card-img-container {
@@ -163,7 +167,7 @@ section > .section-header > p {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 20px;
+    gap: 2rem;
     padding: min(2%, 1.5rem);
 }
 
@@ -189,13 +193,14 @@ section > .section-header > p {
 }
 
 .card {
-    background-color: var(--card-background-color);
+    /*background-color: var(--card-background-color);*/
     width: min(90%, 300px);
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     border-radius: var(--card-border-radius);
     overflow: hidden;
+    position: relative;
 }
 
 .card > div {
@@ -203,7 +208,8 @@ section > .section-header > p {
 }
 
 .card > .card-img-container {
-    height: calc(300px * (9/16));
+    /* height: calc(100% * (9 / 16)); */
+    aspect-ratio: 16 / 9;
     width: 100%;
     padding: 0 0;
     position: relative;
@@ -225,15 +231,6 @@ section > .section-header > p {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.card-title-date-container > p {
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: calc((5 / 16) * 1rem) calc((10 / 16) * 1rem);
 }
 
 .card-title-date-container > div {
@@ -261,6 +258,60 @@ section > .section-header > p {
     color: var(--accent-color-1);
 }
 
+.card-details-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background-color);
+    position: relative;
+}
+
+.calendar-section .card-details-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: var(--card-background-color);
+    bottom: 0;
+}
+
+.card-details-container > .heading {
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(calc(-100%));
+    padding: var(--card-div-padding);
+}
+
+.card-details-container:has(.data-time) > .heading {
+    transform: translateY(calc(-100% - 1rem));
+}
+
+.card-details-container > .data-time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    padding: var(--card-div-padding);
+    font-size: 0.8rem;
+}
+
+.calendar-section .card-details-container > .description {  
+   overflow: hidden;
+   height: 2.4rem;
+   line-height: 1.2rem;
+   transition: 0.7s all ease-in-out;
+}
+
+.calendar-section .card:hover > .card-details-container {
+    transform: translateY(0);
+    position: absolute;
+}
+
+.calendar-section .card:hover > .card-details-container > .description {
+    height: calc(min(90vw, 300px) * (0.6));
+}
+
 .card-page-link {
     color: var(--card-page-link-color);
     transition: var(--card-page-link-transition);
@@ -268,6 +319,18 @@ section > .section-header > p {
 
 .card-page-link:hover {
     color: var(--card-page-link-hover-color);
+}
+
+.calendar-section > .cards-container > .card > .card-img-container {
+    /* height: calc(100% * (4 / 3)); */
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    padding: 0 0;
+    position: relative;
+}
+
+.featured-events-section > .cards-container > .card {
+    width: min(90%, 450px);
 }
 
 section > div:has(.call-to-action) {
