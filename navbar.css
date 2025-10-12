@@ -15,7 +15,7 @@ nav {
     padding: 0 20px 0 20px;
     background-color: var(--nav-background-color);
     color: var(--accent-color);
-    position: sticky;
+    position: relative;
     top: 0;
     height: 70px;
 }
@@ -43,21 +43,24 @@ nav > div > svg > path {
     fill: var(--accent-color);
 }*/
 
-nav > div {
+nav > :first-child, nav .sidebar > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 0px;
     letter-spacing: 0.1em;
     padding: 0;
+    position: relative;
+    white-space: nowrap;
 }
 
-nav a {
+nav a, nav .sidebar > div > div > :first-child {
     text-decoration: none;
     color: var(--accent-color);
     cursor: pointer;
-    padding: 20px 0;
+    padding: 20px 15px;
+    line-height: 30px;
 }
 
 nav .open-sidebar-button, nav .close-sidebar-button {
@@ -77,12 +80,38 @@ nav .close-sidebar-button > svg {
     display: block;
 }
 
-@media (max-width: 1024px) {
+nav .sidebar > div > div {
+    position: relative;
+    text-align: center;
+}
+
+nav .sidebar > div > div a {
+    padding-bottom: 0;
+}
+
+nav .sidebar > div > div > .dropdown {
+    background: var(--nav-background-color);
+    overflow: hidden;
+    position: absolute;
+    left: 0%;
+    transform: translateX(0%) translateY(-100%);
+    transition: 0.5s all ease-in-out;
+    z-index: -1;
+    padding-bottom: 20px;
+}
+
+nav .sidebar > div > div > .dropdown > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+nav .sidebar > div > div:hover > .dropdown {
+    transform: translateX(0%) translateY(0%);
+}
+
+@media (max-width: 1080px) {
     nav .sidebar {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 0;
         position: fixed;
         top: 0;
         right: -100%;
@@ -94,7 +123,15 @@ nav .close-sidebar-button > svg {
         box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
     }
-    nav a {
+    nav .sidebar > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        height: 100%;
+        overflow-y: auto;
+    }
+    nav a, nav .sidebar > div > div > :first-child {
         padding: 15px;
     }
     nav .close-sidebar-button {
@@ -102,11 +139,34 @@ nav .close-sidebar-button > svg {
         margin: 20px;
         align-self: flex-end;
         text-align: left;
+        position: sticky;
+        top: 20px;
     }
     nav .open-sidebar-button, nav .close-sidebar-button {
         display: block;
     }
     nav #sidebar-toggle:checked ~ .sidebar {
         right: 0;
+    }
+    nav .sidebar > div > div a {
+        padding-bottom: 15px;
+    }
+    nav .sidebar > div > div > .dropdown {
+        position: relative;
+        transform: translateX(0) translateY(0);
+        left: 0;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-rows: 0fr;
+        > div {
+            overflow: hidden;
+        }
+    }
+    nav .sidebar > div > div:hover > .dropdown {
+        transform: translateX(0) translateY(0);
+        grid-template-rows: 1fr;
+    }
+    nav .sidebar > div > div > .dropdown > div {
+        align-items: center;
     }
 }
