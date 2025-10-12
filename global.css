@@ -21,6 +21,7 @@
     --section-odd-background-color: #0c0a1a;
     --section-even-background-color: #0c0a1a;
     --section-padding: 1.4rem;
+    --section-space-padding: 2rem;
 
     --card-border-radius: 0 0 5px 5px;
     --card-background-color: #221c48;
@@ -86,7 +87,7 @@ section {
     background-color: var(--section-even-background-color);
     width: 100%;
     padding: var(--section-padding);
-    padding-top: 5rem;
+    padding-top: var(--section-space-padding);
 }
 
 main > section:nth-of-type(odd) {
@@ -139,10 +140,12 @@ section > .section-header > p {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+    container-type: inline-size;
 }
 
 .about-section > div {
-    width: 50%;
+    flex: 1 1 300px
 }
 
 .about-section > .section-header {
@@ -156,10 +159,31 @@ section > .section-header > p {
     text-align: left;
 }
 
-.about-section > .card-img-container {
+/* .about-section > .card-img-container {
     height: 100%;
     object-fit: unset;
     width: 40%;
+} */
+
+@container (max-width: 600px) {
+    .about-section > .section-header > :first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: var(--section-space-padding);
+    }
+    .about-section > .section-header {
+        align-items: center;
+    }
+    .about-section > .card-img-container {
+        margin-top: 5rem;
+    }
 }
 
 .cards-container {
