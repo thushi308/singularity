@@ -63,6 +63,7 @@
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+  font-size: 1.1rem;
 }
 
 h1 {
@@ -145,7 +146,8 @@ section > .section-header > p {
 }
 
 .about-section > div {
-    flex: 1 1 300px
+    flex: 1 1 400px;
+    max-width: 500px;
 }
 
 .about-section > .section-header {
@@ -153,7 +155,7 @@ section > .section-header > p {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 2rem;
     height: -webkit-fill-available;
     height: -moz-available;
     text-align: left;
@@ -165,7 +167,7 @@ section > .section-header > p {
     width: 40%;
 } */
 
-@container (max-width: 600px) {
+@container (max-width: 800px) {
     .about-section > .section-header > :first-child {
         position: absolute;
         top: 0;
@@ -218,7 +220,7 @@ section > .section-header > p {
 
 .card {
     /*background-color: var(--card-background-color);*/
-    width: min(90%, 300px);
+    width: min(90%, 350px);
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -299,7 +301,7 @@ section > .section-header > p {
 
 .card-details-container > .heading {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -339,6 +341,7 @@ section > .section-header > p {
 .card-page-link {
     color: var(--card-page-link-color);
     transition: var(--card-page-link-transition);
+    width: fit-content;
 }
 
 .card-page-link:hover {

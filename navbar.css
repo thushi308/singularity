@@ -18,7 +18,7 @@ nav {
     position: relative;
     top: 0;
     height: 70px;
-    font-size: 0.75rem;
+    font-size: 1.25rem;
 }
 
 nav input#sidebar-toggle {
@@ -148,7 +148,7 @@ nav .sidebar > div > div > :first-child > span {
         text-align: center;
     }
     nav a, nav .sidebar > div > div > :first-child {
-        padding: 0;
+        padding: 0.25rem;
     }
     nav .close-sidebar-button {
         /* padding: 10px; */
@@ -164,9 +164,9 @@ nav .sidebar > div > div > :first-child > span {
     nav #sidebar-toggle:checked ~ .sidebar {
         right: 0;
     }
-    nav .sidebar > div > div a {
-        padding: 0;
-    }
+    /*nav .sidebar > div > div a {
+        padding: 1rem;
+    }*/
     nav .sidebar > div > div > .dropdown {
         position: relative;
         transform: translateX(0) translateY(0);
