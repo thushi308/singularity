@@ -143,6 +143,7 @@ section > .section-header > p {
     align-items: center;
     position: relative;
     container-type: inline-size;
+    container-name: about-section;
 }
 
 .about-section > div {
@@ -167,8 +168,8 @@ section > .section-header > p {
     width: 40%;
 } */
 
-@container (max-width: 800px) {
-    .about-section > .section-header > :first-child {
+@container about-section (max-width: 800px) {
+    .section-header > h2 {
         position: absolute;
         top: 0;
         left: 0;
@@ -180,10 +181,10 @@ section > .section-header > p {
         justify-content: center;
         margin-top: var(--section-space-padding);
     }
-    .about-section > .section-header {
+    .section-header {
         align-items: center;
     }
-    .about-section > .card-img-container {
+    .card-img-container {
         margin-top: 5rem;
     }
 }
@@ -384,51 +385,113 @@ section > div:has(.call-to-action) {
 
 footer {
     background-color: var(--footer-background-color);
-}
-
-footer > div {
-    display: flex;
-    flex-direction: column;
-}
-
-footer > div > .social-media-handles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1rem;
+    font-size: 1rem;
     gap: 1rem;
+    padding: min(2%, 1rem);
 }
 
-footer > div > .social-media-handles >:first-child {
-    width: 100%;
+footer a {
+    cursor: pointer;
+}
+
+footer * {
+    font-size: inherit;
+}
+
+footer > div {
+    flex: 1 1 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    > div {
+        width: 100%;
+        height: 100%;
+
+    }
+}
+
+footer > div > :first-child {
+    display: flex;
+    flex-direction: column;
+    > .social-media-handles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+        container-name: social-media-handles-container;
+        container-type: inline-size;
+        > a > span {
+            width: 80px;
+            display: inline-block;
+        }
+        > a > i {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+@container social-media-handles-container (max-width: 500px) {
+    a > span {
+        display: none !important;
+    }
+    a > i {
+        width: 50px !important;
+        height: 50px !important;
+    }
 }
 
 footer > div > .quick-links {
-    /* display: flex;
-    flex-direction: column; */
-    flex: 1 1 80px; 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    grid-template-rows: auto;
-    /* width: 50%; */
-    gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    container-type: inline-size;
+    container-name: quick-links-container;
+    > :first-child {
+        grid-column: 1 / -1;
+    }
 }
 
-footer > div > .social-media-handles > :first-child , footer > div > .quick-links > :first-child {
-    grid-column: 1 / -1;
-    color: var(--accent-color-1);
+@container quick-links-container (max-width: 100px) {
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
 }
 
-footer > div > .social-media-handles > a, footer > div > .quick-links > a {
-    text-decoration: none;
-    /* color: black; */
-    width: fit-content;
+footer > div > .contact-us {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+footer > div > .footer-img {
+    max-width: 130px;
+    > img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transform: scaleX(-1);
+    }
 }
 
 footer > .copyrights {
-    padding: 1rem;
+    padding: 0rem;
     text-align: center;
+    flex: 1 1 100%;
+    display: block;
 }
