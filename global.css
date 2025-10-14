@@ -23,6 +23,8 @@
     --section-padding: 1.4rem;
     --section-space-padding: 2rem;
 
+    --hero-section-height: calc(100vh - 70px);
+
     --card-border-radius: 0 0 5px 5px;
     --card-background-color: #221c48;
     --card-div-padding: calc((5 / 16) * 1rem) calc((10 / 16) * 1rem);
@@ -108,7 +110,7 @@ section > .section-header > p {
 }
 
 .hero-section {
-    min-height: calc(100vh - 70px);
+    min-height: var(--hero-section-height);
     text-align: center;
     background-image: url("someimage.png");
     background-position: top left;
@@ -330,12 +332,12 @@ section > .section-header > p {
    transition: 0.7s all ease-in-out;
 }
 
-.calendar-section .card:hover > .card-details-container {
+.calendar-section .card:hover > .card-details-container, .calendar-section .card-click > .card-details-container {
     transform: translateY(0);
     position: absolute;
 }
 
-.calendar-section .card:hover > .card-details-container > .description {
+.calendar-section .card:hover > .card-details-container > .description, .calendar-section .card-click > .card-details-container > .description {
     height: calc(min(90vw, 300px) * (0.6));
 }
 
@@ -408,41 +410,40 @@ footer > div {
     align-items: center;
     justify-items: center;
     gap: 1rem;
-    > div {
-        width: 100%;
-        height: 100%;
+}
 
-    }
+footer > div > div {
+    width: 100%;
+    height: 100%;
 }
 
 footer > div > :first-child {
     display: flex;
     flex-direction: column;
-    > .social-media-handles {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
-        container-name: social-media-handles-container;
-        container-type: inline-size;
-        > a > span {
-            width: 80px;
-            display: inline-block;
-        }
-        > a > i {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            > img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                border-radius: 50%;
-            }
-        }
-    }
+}
+
+footer > div > :first-child > .social-media-handles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    container-name: social-media-handles-container;
+    container-type: inline-size;
+}
+
+footer > div > :first-child > .social-media-handles > a > i {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+footer > div > :first-child > .social-media-handles > a > i > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 50%;
 }
 
 @container social-media-handles-container (max-width: 500px) {
@@ -450,8 +451,8 @@ footer > div > :first-child {
         display: none !important;
     }
     a > i {
-        width: 50px !important;
-        height: 50px !important;
+        width: 40px !important;
+        height: 40px !important;
     }
 }
 
@@ -460,9 +461,10 @@ footer > div > .quick-links {
     grid-template-columns: 1fr 1fr;
     container-type: inline-size;
     container-name: quick-links-container;
-    > :first-child {
-        grid-column: 1 / -1;
-    }
+}
+
+footer > div > .quick-links > :first-child {
+    grid-column: 1 / -1;
 }
 
 @container quick-links-container (max-width: 100px) {
@@ -481,12 +483,13 @@ footer > div > .contact-us {
 
 footer > div > .footer-img {
     max-width: 130px;
-    > img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        transform: scaleX(-1);
-    }
+}
+
+footer > div > .footer-img > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transform: scaleX(-1);
 }
 
 footer > .copyrights {

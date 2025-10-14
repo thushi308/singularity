@@ -119,7 +119,7 @@ nav .sidebar > div > div:hover > .dropdown {
 
 nav .sidebar > div > div > :first-child > span {
     display: inline-block;
-    transform: scaleX(1.7) scaleY(0.8) translateY(1px) translateX(3px);
+    transform: scaleX(1.7) scaleY(0.8) translateY(7px) translateX(3px);
 }
 
 @media (max-width: 1080px) {
@@ -174,9 +174,9 @@ nav .sidebar > div > div > :first-child > span {
         padding: 0rem 0;
         display: grid;
         grid-template-rows: 0fr;
-        > div {
-            overflow: hidden;
-        }
+    }
+    nav .sidebar > div > div > .dropdown > div {
+        overflow: hidden;
     }
     nav .sidebar > div > div:hover > .dropdown {
         transform: translateX(0) translateY(0);
