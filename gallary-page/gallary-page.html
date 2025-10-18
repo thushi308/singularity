@@ -15,13 +15,15 @@
 
     <link rel="stylesheet" href="gallary-page.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- 
-    // navbar from thushiyanth code 
+
+    <!-- // navbar from thushiyanth code  -->
     <header>
-        <nav>
+        <nav class="main-navbar">
             <div>
                 <img src="assets/Logo.png" alt="Logo" class="logo">
             </div>
@@ -46,7 +48,7 @@
                             </path>
                         </svg>
                     </label>
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="#">Our Activities</a>
                     <a href="#">About</a>
                     <div>
@@ -76,8 +78,7 @@
         </nav>
     </header>
 
-    // navbar from thushiyanth code  
--->
+    <!-- // navbar from thushiyanth code   -->
 
     <main>
         <h1>Gallery | Singularity</h1>
@@ -93,12 +94,6 @@
 
         <nav class="category-nav">
             <ul>
-                <!-- <li data-category="astrophotography" class="active">
-      Astrophotography
-      <select class="year-dropdown">
-        <option value="all">All Time</option>
-      </select>
-    </li> -->
                 <li data-category="astrophotography" class="active">
                     Astrophotography
                     <select class="year-dropdown">
@@ -139,7 +134,73 @@
         <div class="modal-caption" id="modalCaption"></div>
     </div>
 
+
+
+    <!-- footer by thushiyanth  -->
+     
+    <footer>
+        <div>
+            <div>
+                <div>SINGULARITY</div>
+                <div>Follow us on</div>
+                <div class="social-media-handles">
+                    <!--somelinks-->
+                    <a href="#">
+                        <i>
+                            <img src="https://www.svgrepo.com/show/349410/instagram.svg">
+                        </i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#">
+                        <i>
+                            <img style="filter: invert(100%)"
+                                src="https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png">
+                        </i>
+                        <span>X</span>
+                    </a>
+                    <a href="#">
+                        <i>
+                            <img src="https://www.svgrepo.com/show/349436/linkedin.svg">
+                        </i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#">
+                        <i>
+                            <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                        </i>
+                        <span>You Tube</span>
+                    </a>
+                </div>
+            </div>
+            <div class="quick-links">
+                <p class="">Quick Links</p>
+                <!--somelinks-->
+                <a href="#">Home</a>
+                <a href="#">Programs</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
+                <a href="#">Newsletter</a>
+            </div>
+        </div>
+        <div>
+            <div class="contact-us">
+                <p class="address">IISER Kolkata, Haringhata Farm, Nadia, West Bengal, India - 741 246</p>
+                <p class="email">singularity.activiy@iiserkol.ac.in</p>
+                <p class="phone">+91 xxxxx xxxxx</p>
+            </div>
+            <div class="footer-img">
+                <img src="telescope.png" alt="someimage">
+            </div>
+        </div>
+        <div class="copyrights">
+            <!--copyrights-->
+            copyrights reserved
+        </div>
+    </footer>
+
     <script type="module" src="gallary-page.js"></script>
+    <script src="global-js.js"></script>
 </body>
 
 </html>

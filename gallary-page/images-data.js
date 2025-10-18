@@ -83,4 +83,11 @@ export const galleryImages = [
     category: 'behind-the-scenes',
     year: 2025
   },
+  {
+    src: 'images/faculty-talk-1.jpg',
+    title: 'Faculty Talk',
+    description: 'Faculty Talk - Compact Objects',
+    category: 'posters',
+    year: 2025
+  },
 ];

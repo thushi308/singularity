@@ -1,26 +1,12 @@
-:root {
-    --bg-color: rgb(40, 40, 40);
-    --text-color: #ffffff;
-    --accent-color: #ff6666;
-    --overlay-bg: rgba(0, 0, 0, 0.7);
-    --card-radius: 6px;
-    --transition-speed: 0.3s;
+@import url(global.css);
+/* @import url(style.css); */
 
-    --main-width: 80vw;
-    --max-main-width: 1200px;
-    --img-height: 300px;
-    --modal-padding-top: 50px;
-    --modal-overlay-color: rgba(0, 0, 0, 0.9);
-}
 
 html,
 body {
-    padding: 0;
-    margin: 0;
     height: 100%;
-    background: var(--bg-color);
+    background: var(--gallery-bg-color);
     color: var(--text-color);
-    font-family: "Turret Road", sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -29,17 +15,18 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: var(--main-width);
-    max-width: var(--max-main-width);
+    width: var(--gallery-main-width);
+    max-width: var(--gallery-max-main-width);
     margin: 0 auto;
+    font-family: var(--gallery-body-font);
 }
 
 h1 {
-    font-family: "Syne Mono", monospace;
+    font-family: var(--gallery-heading-font);
     margin: 20px 0;
     position: sticky;
     top: 0;
-    background: var(--bg-color);
+    background: var(--gallery-bg-color);
     z-index: 10;
     padding: 10px 0;
     text-align: center;
@@ -57,7 +44,7 @@ h1 {
 
 .intro-box h2 {
     margin-bottom: 10px;
-    color: var(--accent-color);
+    color: var(--gallery-accent-color);
 }
 
 .category-nav ul {
@@ -79,43 +66,16 @@ h1 {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .category-nav li:hover,
 .category-nav li.active {
     background: rgba(255, 255, 255, 0.15);
-    color: var(--accent-color);
+    color: var(--gallery-accent-color);
     transform: scale(1.05);
-}
-
-/* .year-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.year-nav li {
-    cursor: pointer;
-    padding: 8px 14px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease, transform 0.2s ease;
-    list-style: none;
-    font-weight: 500;
-}
-} */
-
-.category-nav li {
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .year-dropdown {
@@ -124,7 +84,7 @@ h1 {
     color: var(--text-color);
     border-radius: 6px;
     padding: 5px 8px;
-    font-family: inherit;
+    font-family: var(--body-font);
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -153,15 +113,15 @@ h1 {
 .images-card {
     position: relative;
     overflow: hidden;
-    border-radius: var(--card-radius);
+    border-radius: var(--gallery-card-radius);
 }
 
 .images-card img {
     width: 100%;
-    height: var(--img-height);
+    height: var(--gallery-img-height);
     object-fit: cover;
     display: block;
-    transition: transform var(--transition-speed) ease;
+    transition: transform var(--gallery-transition-speed) ease;
     cursor: zoom-in;
 }
 
@@ -201,7 +161,6 @@ h1 {
     margin-top: 5px;
     transition: all 0.3s ease;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-
     word-wrap: break-word;
     pointer-events: none;
 }
@@ -222,7 +181,7 @@ h1 {
     display: none;
     position: fixed;
     inset: 0;
-    background: var(--modal-overlay-color);
+    background: var(--gallery-modal-overlay-color);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -233,7 +192,7 @@ h1 {
 }
 
 .image-modal.show {
-    display: block;
+    display: flex;
     opacity: 1;
 }
 
@@ -257,6 +216,12 @@ h1 {
     word-wrap: break-word;
 }
 
+.image-modal,
+.modal-caption {
+    font-family: var(--gallery-body-font);
+    color: var(--text-color);
+}
+
 .close-btn,
 .nav-btn {
     position: absolute;
@@ -273,7 +238,7 @@ h1 {
 }
 
 .close-btn:hover {
-    color: var(--accent-color);
+    color: var(--gallery-accent-color);
 }
 
 .nav-btn {
@@ -295,7 +260,7 @@ h1 {
 
 .nav-btn:hover {
     background: rgba(255, 255, 255, 0.2);
-    color: var(--accent-color);
+    color: var(--gallery-accent-color);
 }
 
 .fade-out {
@@ -341,106 +306,142 @@ h1 {
     }
 }
 
-/* ======================== RESPONSIVENESS ================== */
+@media (max-width: 600px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
 
-@media (max-width: 992px) {
     main {
-        width: 90vw;
-    }
-
-    .gallery-cards {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    }
-
-    .images-card img {
-        height: 220px;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        padding: 0 16px;
     }
 
     h1 {
         font-size: 1.5em;
+        margin: 12px 0;
+        padding: 10px 0;
+        text-align: left;
     }
 
     .intro-box {
-        font-size: 0.95em;
-        padding: 16px;
+        font-size: 0.85em;
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+
+    .category-nav {
+        width: 100%;
+        margin: 14px 0;
+        padding: 6px 4px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+        border-radius: 10px;
     }
 
     .category-nav ul {
-        gap: 15px;
-    }
-
-    .nav-btn {
-        font-size: 32px;
-        padding: 10px;
-    }
-
-    .close-btn {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 768px) {
-    main {
-        width: 92vw;
-    }
-
-    .gallery-cards {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    .images-card img {
-        height: 200px;
-    }
-
-    .intro-box {
-        font-size: 0.9em;
-        padding: 14px;
-    }
-
-    h1 {
-        font-size: 1.3em;
-    }
-
-    .category-nav ul {
-        gap: 10px;
+        display: flex;
         flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 8px;
+        list-style: none;
+        overflow: hidden;
     }
 
     .category-nav li {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
         padding: 8px 14px;
-        font-size: 0.9em;
+        border-radius: 18px;
+        font-size: 0.92em;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text-color);
+        cursor: pointer;
+        transition: transform 160ms ease, background 160ms ease, box-shadow 180ms ease;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .year-dropdown {
-        font-size: 0.9em;
+    .category-nav li:hover,
+    .category-nav li:active {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .category-nav li.active {
+        background: var(--gallery-accent-color);
+        color: var(--gallery-bg-color);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        transform: none;
+    }
+
+    .category-nav li:focus,
+    .category-nav li a:focus,
+    .category-nav li button:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.08);
+        outline-offset: 2px;
+    }
+
+    .category-nav .year-dropdown {
+        margin-left: 6px;
+        font-size: 0.82em;
         padding: 4px 6px;
+        min-width: 48px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text-color);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
     }
 
-    .nav-btn {
-        font-size: 26px;
-        padding: 8px;
+    .category-nav .year-dropdown:focus {
+        outline: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) inset;
     }
 
-    .close-btn {
-        font-size: 24px;
-        top: 15px;
-        right: 18px;
-    }
-}
-
-@media (max-width: 600px) {
-    main {
-        width: 94vw;
-    }
     .gallery-cards {
         grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 8px;
+        gap: 14px;
+        padding: 8px 0;
     }
 
     .images-card img {
         height: auto;
         max-height: 320px;
+        object-fit: cover;
+    }
+
+    .image-modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        max-width: 95vw;
+        max-height: 85vh;
+        width: auto;
+        height: auto;
+    }
+
+    .modal-caption {
+        font-size: 0.85em;
+        max-width: 90vw;
+        padding: 5px;
+    }
+
+    .nav-btn {
+        font-size: 26px;
+        padding: 6px;
+    }
+
+    .close-btn {
+        font-size: 28px;
+        top: 10px;
+        right: 10px;
     }
 
     .image-hover-caption {
@@ -450,85 +451,5 @@ h1 {
 
     .image-hover-caption .description {
         font-size: 0.8em;
-    }
-
-    .intro-box {
-        font-size: 0.85em;
-        padding: 12px;
-    }
-
-    h1 {
-        font-size: 1.75em;
-        margin: 15px 0;
-    }
-
-    .category-nav ul {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 0 16px;
-
-        gap: 10px;
-        scrollbar-width: none;
-    }
-
-    .category-nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    .category-nav li {
-        flex: 0 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        white-space: nowrap;
-        padding: 8px 16px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.08);
-        font-size: 0.9em;
-        cursor: pointer;
-        transition: all 0.3s ease, transform 0.3s ease;
-    }
-    .category-nav li:first-child {
-        margin-left: 0;
-
-
-    }
-
-    .category-nav li.active {
-        background: var(--accent-color);
-        color: var(--bg-color);
-    }
-
-
-    .category-nav ul::after {
-        content: "";
-        flex: 0 0 16px;
-    }
-
-    .year-dropdown {
-        font-size: 0.85em;
-        padding: 4px 6px;
-    }
-
-    .modal-content {
-        max-width: 95vw;
-        max-height: 80vh;
-    }
-
-    .modal-caption {
-        font-size: 0.85em;
-    }
-
-    .nav-btn {
-        font-size: 22px;
-        padding: 6px;
-    }
-
-    .close-btn {
-        font-size: 22px;
-        top: 10px;
-        right: 15px;
     }
 }
