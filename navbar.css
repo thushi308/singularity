@@ -7,7 +7,7 @@
   font-size: 30px;
 }
 
-nav {
+.main-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,21 +18,21 @@ nav {
     position: relative;
     top: 0;
     height: 70px;
-    font-size: 0.75rem;
+    font-size: 1.25rem;
 }
 
-nav input#sidebar-toggle {
+.main-navbar input#sidebar-toggle {
     display: none;
 }
 
-nav > div:first-child {
+.main-navbar > div:first-child {
     width: 100px;
     height: 40px;
     padding: 5px 0;
     box-sizing: content-box;
 }
 
-nav > div > img {
+.main-navbar > div > img {
     height: 130%;
 }
 
@@ -44,7 +44,7 @@ nav > div > svg > path {
     fill: var(--accent-color);
 }*/
 
-nav > :first-child, nav .sidebar > div {
+.main-navbar > :first-child, .main-navbar .sidebar > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,7 +56,7 @@ nav > :first-child, nav .sidebar > div {
     white-space: nowrap;
 }
 
-nav a, nav .sidebar > div > div > :first-child {
+.main-navbar a, .main-navbar .sidebar > div > div > :first-child {
     text-decoration: none;
     color: var(--accent-color);
     cursor: pointer;
@@ -64,33 +64,33 @@ nav a, nav .sidebar > div > div > :first-child {
     line-height: 30px;
 }
 
-nav .open-sidebar-button, nav .close-sidebar-button {
+.main-navbar .open-sidebar-button, .main-navbar .close-sidebar-button {
     cursor: pointer;
     display: none;
 }
 
-nav .open-sidebar-button > svg {
+.main-navbar .open-sidebar-button > svg {
     fill: var(--text-color);
     width: fit-content;
     display: block;
 }
 
-nav .close-sidebar-button > svg {
+.main-navbar .close-sidebar-button > svg {
     fill: var(--text-color);
     width: fit-content;
     display: block;
 }
 
-nav .sidebar > div > div {
+.main-navbar .sidebar > div > div {
     position: relative;
     text-align: center;
 }
 
-nav .sidebar > div > div a {
+.main-navbar .sidebar > div > div a {
     padding-bottom: 0;
 }
 
-nav .sidebar > div > div > .dropdown {
+.main-navbar .sidebar > div > div > .dropdown {
     background: hsl(from var(--nav-background-color) h s calc(l + 10));
     overflow: hidden;
     position: absolute;
@@ -101,13 +101,13 @@ nav .sidebar > div > div > .dropdown {
     padding-bottom: 20px;
 }
 
-nav .sidebar > div > div > .dropdown > div {
+.main-navbar .sidebar > div > div > .dropdown > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-nav .sidebar > div > div:hover > .dropdown {
+.main-navbar .sidebar > div > div:hover > .dropdown {
     transform: translateX(0%) translateY(0%);
 }
 
@@ -117,13 +117,13 @@ nav .sidebar > div > div:hover > .dropdown {
     font-weight: 1 999;
 }
 
-nav .sidebar > div > div > :first-child > span {
+.main-navbar .sidebar > div > div > :first-child > span {
     display: inline-block;
     transform: scaleX(1.7) scaleY(0.8) translateY(1px) translateX(3px);
 }
 
 @media (max-width: 1080px) {
-    nav .sidebar {
+    .main-navbar .sidebar {
         position: fixed;
         top: 0;
         right: -100%;
@@ -135,7 +135,7 @@ nav .sidebar > div > div > :first-child > span {
         box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
     }
-    nav .sidebar > div {
+    .main-navbar .sidebar > div {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -143,14 +143,14 @@ nav .sidebar > div > div > :first-child > span {
         height: 100%;
         overflow-y: auto;
     }
-    nav a, nav .sidebar > div div {
+    .main-navbar a, .main-navbar .sidebar > div div {
         width: 100%;
         text-align: center;
     }
-    nav a, nav .sidebar > div > div > :first-child {
-        padding: 0;
+    .main-navbar a, .main-navbar .sidebar > div > div > :first-child {
+        padding: 0.25rem;
     }
-    nav .close-sidebar-button {
+    .main-navbar .close-sidebar-button {
         /* padding: 10px; */
         margin: 20px;
         align-self: flex-end;
@@ -158,16 +158,16 @@ nav .sidebar > div > div > :first-child > span {
         position: sticky;
         top: 20px;
     }
-    nav .open-sidebar-button, nav .close-sidebar-button {
+    .main-navbar .open-sidebar-button, .main-navbar .close-sidebar-button {
         display: block;
     }
-    nav #sidebar-toggle:checked ~ .sidebar {
+    .main-navbar #sidebar-toggle:checked ~ .sidebar {
         right: 0;
     }
-    nav .sidebar > div > div a {
-        padding: 0;
-    }
-    nav .sidebar > div > div > .dropdown {
+    /*nav .sidebar > div > div a {
+        padding: 1rem;
+    }*/
+    .main-navbar .sidebar > div > div > .dropdown {
         position: relative;
         transform: translateX(0) translateY(0);
         left: 0;
@@ -178,11 +178,11 @@ nav .sidebar > div > div > :first-child > span {
             overflow: hidden;
         }
     }
-    nav .sidebar > div > div:hover > .dropdown {
+    .main-navbar .sidebar > div > div:hover > .dropdown {
         transform: translateX(0) translateY(0);
         grid-template-rows: 1fr;
     }
-    nav .sidebar > div > div > .dropdown > div {
+    .main-navbar .sidebar > div > div > .dropdown > div {
         align-items: center;
         gap: 0rem;
     }

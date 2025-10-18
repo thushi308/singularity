@@ -6,7 +6,7 @@
 
     --primary-color: #ffcc00;
     --secondary-color: #000000;
-    --accent-color: #ffcc00;
+    --accent-color: #ffcc00; 
 
     --font-family: 'Poppins', sans-serif;
     --font-size: 16px;
@@ -21,4 +21,38 @@
     --padding: 10px;
     --margin: 10px;
     --border-radius: 5px;
+}
+
+:root {
+    /* --primary-color-1: #3b4e6c;
+    --primary-color-2: #ffab1a; */
+    /* --accent-color-1: #ff7518;
+    --accent-color-2: hsl(24, 100%, 50%); */
+
+    --primary-font: 'Poppins', sans-serif;
+    --text-color: #e5e5e5;
+
+    --nav-background-color: #1a1537;
+    /* --nav-background-color: rgb(66, 66, 66); */
+    --nav-sidebar-cut-width: 1024px;
+
+    --footer-background-color: #16122f;
+    /* --footer-background-color: rgb(66, 66, 66); */
+
+
+/* $ gallery-page special $ */
+    --gallery-bg-color: rgb(40, 40, 40);
+    --gallery-accent-color: #ff6666;
+    --gallery-overlay-bg: rgba(0, 0, 0, 0.7);
+    --gallery-modal-overlay-color: rgba(0, 0, 0, 0.9);
+
+    --gallery-card-radius: 6px;
+    --gallery-transition-speed: 0.3s;
+    --gallery-main-width: 80vw;
+    --gallery-max-main-width: 1200px;
+    --gallery-img-height: 300px;
+    --gallery-modal-padding-top: 50px;
+
+    --gallery-body-font:"Turret Road", sans-serif;
+    --gallery-heading-font: "Syne Mono", monospace;
 }
