@@ -1,5 +1,4 @@
 @import url(global.css);
-/* @import url(style.css); */
 
 
 html,
@@ -139,6 +138,8 @@ h1 {
     color: var(--text-color);
     display: flex;
     flex-direction: column;
+    gap: 0.3rem;
+    /* padding-bottom: 0; */
     justify-content: flex-end;
     pointer-events: none;
     transform: translateY(10px);
@@ -177,6 +178,28 @@ h1 {
     word-wrap: break-word;
 }
 
+.image-hover-caption .description,
+.image-hover-caption .credit {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+
+}
+
+.images-card:hover .image-hover-caption .description,
+.images-card:hover .image-hover-caption .credit {
+    opacity: 1;
+    max-height: 100px; 
+    padding: 4px 0;
+}
+
+.images-card:hover .image-hover-caption {
+    transform: translateY(-10px);
+
+}
+
+
 .image-modal {
     display: none;
     position: fixed;
@@ -198,9 +221,11 @@ h1 {
 
 .modal-content {
     max-width: 95vw;
-    max-height: 90vh;
+    max-height: 80vh;
     width: auto;
     height: auto;
+    object-fit: contain;
+
     border-radius: 6px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     object-fit: contain;
@@ -211,9 +236,27 @@ h1 {
     margin-top: 10px;
     color: #ccc;
     font-size: 1em;
+    /* font-weight: bold; */
     max-width: 90vw;
     text-align: center;
     word-wrap: break-word;
+}
+
+
+.modal-caption p {
+    margin: 0.4em 0;
+}
+
+.modal-description {
+    margin-bottom: 0.6em; 
+}
+
+.modal-credit {
+    margin-bottom: 0.4em; 
+}
+
+.modal-date {
+    margin-top: 0.2em; 
 }
 
 .image-modal,
@@ -307,6 +350,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
+
     html,
     body {
         overflow-x: hidden;
@@ -444,12 +488,33 @@ h1 {
         right: 10px;
     }
 
-    .image-hover-caption {
+    /* .image-hover-caption {
         font-size: 0.9em;
         padding: 10px;
     }
 
     .image-hover-caption .description {
         font-size: 0.8em;
+    } */
+    .images-card:hover img {
+        transform: none;
+    }
+
+    .images-card:hover .image-hover-caption {
+        transform: none;
+    }
+
+    .images-card:hover .image-hover-caption .description {
+        opacity: 1;
+        max-height: none;
+    }
+
+    .image-hover-caption .description,
+    .image-hover-caption .date,
+    .image-hover-caption .credit {
+        opacity: 1;
+        max-height: none;
+        font-size: 0.9em;
+        padding: 8px 0;
     }
 }

@@ -22,12 +22,14 @@ function safeQuery(selector, parent = document) {
 
 function populateYearDropdowns() {
   const categories = [...new Set(galleryImages.map(img => img.category))];
+  
   categories.forEach(category => {
     const years = [...new Set(
       galleryImages
         .filter(img => img.category === category)
         .map(img => img.year)
     )].sort((a, b) => b - a);
+    
     const li = document.querySelector(`.category-nav li[data-category="${category}"]`);
     if (!li) return;
     const dropdown = safeQuery('.year-dropdown', li);
@@ -43,9 +45,12 @@ function populateYearDropdowns() {
   });
 }
 
+
+
 function renderGallery() {
   galleryContainer.classList.remove('fade-in', 'fade-out');
   galleryContainer.classList.add('fade-out');
+
   setTimeout(() => {
     let images = galleryImages.filter(img => img.category === currentCategory);
     if (currentYear) images = images.filter(img => img.year === currentYear);
@@ -55,18 +60,21 @@ function renderGallery() {
           <p>No images found for this selection.</p>
         </div>
       `;
+
       currentImages = [];
       galleryContainer.classList.remove('fade-out');
       galleryContainer.classList.add('fade-in');
       setTimeout(() => galleryContainer.classList.remove('fade-in'), 400);
       return;
     }
+
     galleryContainer.innerHTML = images.map((img, index) => `
       <div class="images-card" data-index="${index}">
         <img src="${img.src}" alt="${img.title || 'Gallery image'}" loading="lazy" data-index="${index}">
         <div class="image-hover-caption">
           <span class="title">${img.title || ''}</span>
           <span class="description">${img.description || ''}</span>
+          ${img.credit ? `<span class="credit">Credit: ${img.credit}</span>` : ''}
         </div>
       </div>
     `).join('');
@@ -86,11 +94,19 @@ function openModal(index, images) {
   if (!images || images.length === 0) return;
   currentIndex = index;
   const imgData = images[index];
+
   currentImages = images;
   modal.classList.add('show');
   modalImg.src = imgData.src;
   modalImg.alt = imgData.title || 'Gallery image';
-  modalCaption.textContent = `${imgData.title || ''}${imgData.description ? ' — ' + imgData.description : ''}`;
+
+  // modalCaption.textContent = `${imgData.title || ''}${imgData.description ? ' — ' + imgData.description : ''}`;
+  modalCaption.innerHTML = `
+  <p><strong>${imgData.title || ''}</strong></p>
+  ${imgData.description ? `<p>${imgData.description}</p>` : ''}
+  ${imgData.credit ? `<p><em>Credit:</em> ${imgData.credit}</p>` : ''}
+  ${imgData.date ? `<p><strong>Date:</strong> ${imgData.date}</p>` : ''}
+`;
 }
 
 function closeModalFn() {
@@ -105,7 +121,14 @@ function updateModalContent(index) {
   const imgData = currentImages[index];
   if (!imgData) return;
   modalImg.src = imgData.src;
-  modalCaption.textContent = `${imgData.title || ''}${imgData.description ? ' — ' + imgData.description : ''}`;
+  modalImg.alt = imgData.title || 'Gallery image';
+
+  modalCaption.innerHTML = `
+    <p><strong>${imgData.title || ''}</strong></p>
+    ${imgData.description ? `<p>${imgData.description}</p>` : ''}
+    ${imgData.credit ? `<p><em>Credit:</em> ${imgData.credit}</p>` : ''}
+    ${imgData.date ? `<p><strong>Date:</strong> ${imgData.date}</p>` : ''}
+  `;
 }
 
 function showPrev() {
