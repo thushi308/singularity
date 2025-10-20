@@ -77,13 +77,6 @@ Use this for main colors to use.
     color: var(--text-color);  */
 } 
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: var(--nav-background-color);
-}
-
 
 /* ============== navbar (designed by Thushiyanth) ============= */
 
@@ -93,7 +86,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(5, 5, 15, 0.15);
+  background-color: var(--nav-background-color);
   backdrop-filter: blur(6px);
   transition: all 0.5s ease-in-out;
   box-shadow: 0 0 0 rgba(255, 255, 255, 0);

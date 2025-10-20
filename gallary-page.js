@@ -104,8 +104,8 @@ function openModal(index, images) {
   modalCaption.innerHTML = `
   <p><strong>${imgData.title || ''}</strong></p>
   ${imgData.description ? `<p>${imgData.description}</p>` : ''}
-  ${imgData.credit ? `<p><em>Credit:</em> ${imgData.credit}</p>` : ''}
-  ${imgData.date ? `<p><strong>Date:</strong> ${imgData.date}</p>` : ''}
+  ${imgData.credit ? `<p class="modal-credit"><em>Credit:</em> ${imgData.credit}</p>` : ''}
+  ${imgData.date ? `<p class="modal-date"><strong>Date:</strong> ${imgData.date}</p>` : ''}
 `;
 }
 
@@ -126,8 +126,8 @@ function updateModalContent(index) {
   modalCaption.innerHTML = `
     <p><strong>${imgData.title || ''}</strong></p>
     ${imgData.description ? `<p>${imgData.description}</p>` : ''}
-    ${imgData.credit ? `<p><em>Credit:</em> ${imgData.credit}</p>` : ''}
-    ${imgData.date ? `<p><strong>Date:</strong> ${imgData.date}</p>` : ''}
+    ${imgData.credit ? `<p class="modal-credit"><em>Credit:</em> ${imgData.credit}</p>` : ''}
+    ${imgData.date ? `<p class="modal-date"><strong>Date:</strong> ${imgData.date}</p>` : ''}
   `;
 }
 
