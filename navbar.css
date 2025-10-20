@@ -118,8 +118,15 @@ nav .sidebar > div > div:hover > .dropdown {
 }
 
 nav .sidebar > div > div > :first-child > span {
-    display: inline-block;
-    transform: scaleX(1.7) scaleY(0.8) translateY(7px) translateX(3px);
+    /*display: inline-block;
+    transform: scaleX(1.7) scaleY(0.8) translateY(7px) translateX(3px);*/
+    position: relative;
+}
+
+nav .sidebar > div > div > :first-child > span > svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @media (max-width: 1080px) {

@@ -31,9 +31,11 @@
     --card-page-link-color: #ff7518;
     --card-page-link-hover-color: #3b4e6c;
     --card-page-link-transition: all 0.3s ease-in-out;
-    --cards-container-scrollbar-color: #3a317a;
-    /* --cards-container-scrollbar-color: linear-gradient(to right, hsl(from var(--accent-color-1) calc(h + 5) s calc(l - 20)), hsl(from var(--section-even-background-color) calc(h - 5) s calc(l + 10))); */
-    --cards-container-scrollbar-width: calc((6 / 16) * 1rem);
+    /*--cards-container-scrollbar-color: #3a317a;*/
+    --cards-container-scrollbar-color: var(--accent-color-1);
+    --cards-container-scrollbar-width: 0.2rem;
+    /* --cards-container-scrollbar-color: linear-gradient(to right, hsl(from var(--accent-color-1) calc(h + 5) s calc(l - 20)), hsl(from var(--section-even-background-color) calc(h - 5) s calc(l + 10)));
+    --cards-container-scrollbar-width: calc((6 / 16) * 1rem);*/
 
     --call-to-action-padding: 10px 20px;
     --call-to-action-background-color: #ff7518;
@@ -197,7 +199,8 @@ section > .section-header > p {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 2rem;
-    padding: min(2%, 1.5rem);
+    /*padding: min(2%, 1.5rem);*/
+    padding: 1rem 0;
 }
 
 .cards-container::-webkit-scrollbar {
@@ -216,7 +219,7 @@ section > .section-header > p {
 
 @supports not selector(::-webkit-scrollbar) {
     .cards-container {
-        scrollbar-color: var(--accent-color-2) var(--section-even-background-color);
+        scrollbar-color: var(--cards-container-scrollbar-color) var(--section-even-background-color);
         scrollbar-width: thin;
     }
 }
@@ -363,6 +366,43 @@ section > .section-header > p {
     width: min(90%, 450px);
 }
 
+.gallery-section > .images-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.gallery-section > .images-container > div {
+    flex: 1 1 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    max-width: 600px;
+    gap: 1rem;
+}
+
+.gallery-section > .images-container > div:last-child {
+    grid-template-rows: 1fr 1.5fr;
+}
+
+/*.gallery-section > .images-container > div > .image {
+    aspect-ratio: 1 / 1;
+}*/
+
+.gallery-section > .images-container > div > .image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.gallery-section > .images-container > div:first-child > .image:first-child, .gallery-section > .images-container > div:last-child > .image:last-child {
+    grid-column: span 2;
+}
+
 section > div:has(.call-to-action) {
     text-align: center;
     padding: 1rem;
@@ -391,16 +431,24 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 1rem;
+    font-weight: 250;
     gap: 1rem;
-    padding: min(2%, 1rem);
+    padding: var(--section-padding);
+}
+
+footer .footer-title {
+    font-size: 1.3rem;
+    font-weight: 800;
 }
 
 footer a {
     cursor: pointer;
+    text-decoration: none;
 }
 
 footer * {
     font-size: inherit;
+    font-weight: inherit;
 }
 
 footer > div {
@@ -412,14 +460,28 @@ footer > div {
     gap: 1rem;
 }
 
+footer > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+}
+
 footer > div > div {
     width: 100%;
     height: 100%;
 }
 
+footer .footer-heading {
+    font-weight: 450;
+}
+
+footer > div > :first-child > .social-media-handles .footer-heading {
+    flex: 1 0 100%;
+}
+
 footer > div > :first-child {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 footer > div > :first-child > .social-media-handles {
@@ -465,6 +527,11 @@ footer > div > .quick-links {
 
 footer > div > .quick-links > :first-child {
     grid-column: 1 / -1;
+    padding: 0.5rem 0;
+}
+
+footer > div > .quick-links > a {
+    padding: 0.2rem 0
 }
 
 @container quick-links-container (max-width: 100px) {
@@ -479,10 +546,12 @@ footer > div > .contact-us {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
+    gap: 0.5rem;
+    width: revert;
 }
 
 footer > div > .footer-img {
-    max-width: 130px;
+    max-width: 120px;
 }
 
 footer > div > .footer-img > img {
@@ -497,4 +566,5 @@ footer > .copyrights {
     text-align: center;
     flex: 1 1 100%;
     display: block;
+    font-weight: 300;
 }
