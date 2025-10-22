@@ -506,6 +506,11 @@ section > .section-header > p {
     text-align: center;
 }
 
+.youtube-section > .youtube-card > iframe {
+    width: 100%;
+    max-width: 1120px;
+}
+
 section > div:has(.call-to-action) {
     text-align: center;
     padding: 1rem;
