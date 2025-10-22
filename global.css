@@ -152,7 +152,7 @@ section > .section-header > p {
 
 .about-section > div {
     flex: 1 1 400px;
-    max-width: 500px;
+    max-width: unset;
 }
 
 .about-section > .section-header {
@@ -403,18 +403,25 @@ section > .section-header > p {
     grid-column: span 2;
 }
 
+.projects-section {
+    text-align: center;
+}
+
 .projects-section > .projects-container {
-    padding: 1rem 0;
+    padding: 2.5rem 0;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 4rem;
+    width: max(96%, 1rem);
+    margin: 0 auto;
 }
 
 .projects-section > .projects-container > .project {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-content: center;
     align-items: center;
     position: relative;
     container-type: inline-size;
@@ -427,32 +434,40 @@ section > .section-header > p {
 
 .projects-section > .projects-container > .project > div {
     flex: 1 1 400px;
-    max-width: 500px;
+    text-align: center;
+}
+
+.projects-section > .projects-container > .project > .project-image-container {
+    text-align: left;
+}
+
+.projects-section > .projects-container > .project:nth-child(2n) > .project-image-container {
+    text-align: right;
+}
+
+.projects-section > .projects-container > .project > .project-image-container > img {
+    max-width: 700px;
 }
 
 .projects-section > .projects-container > .project > .project-details {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     height: -webkit-fill-available;
     height: -moz-available;
     text-align: left;
-    padding: 1rem;
-}
-
-.projects-section > .projects-container > .project:nth-child(2n) > .project-details {
-    align-items: flex-end;
-}
-
->.projects-section > .projects-container > .project:nth-child(2n) > .project-details > .project-description {
-    text-align: right;
+    padding: 1rem 1rem;
 }
 
 .projects-section > .projects-container > .project > .project-details > .project-title {
     font-size: 1.6rem;
     font-weight: 500;
+}
+
+.projects-section > .projects-container > .project > .project-details > .project-page-link {
+    align-self: flex-end;
 }
 
 .projects-section > .projects-container > .project > .project-image-container img {
@@ -462,6 +477,9 @@ section > .section-header > p {
 }
 
 @container project (max-width: 800px) {
+    & {
+        gap: 1rem;
+    }
     .project-details > .project-title {
         position: absolute;
         top: 0;
@@ -479,9 +497,14 @@ section > .section-header > p {
     }
     .project-image-container {
         margin-top: 3rem;
+        text-align: center!important;
     }
 }
 
+.youtube-section > .youtube-card {
+    width: 100%;
+    text-align: center;
+}
 
 section > div:has(.call-to-action) {
     text-align: center;
