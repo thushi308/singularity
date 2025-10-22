@@ -137,7 +137,7 @@ nav .sidebar > div > div > :first-child > span > svg {
         width: 65%;
         max-width: 250px;
         height: 100%;
-        background-color: var(--nav-background-color);
+        background-color: hsl(from var(--nav-background-color) h s calc(l + 5));
         z-index: 10;
         box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
@@ -188,9 +188,10 @@ nav .sidebar > div > div > :first-child > span > svg {
     nav .sidebar > div > div:hover > .dropdown {
         transform: translateX(0) translateY(0);
         grid-template-rows: 1fr;
+        padding: 0.5rem 0 0.75rem 0;
     }
     nav .sidebar > div > div > .dropdown > div {
         align-items: center;
-        gap: 0rem;
+        gap: 1.25rem;
     }
 }

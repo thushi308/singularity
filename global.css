@@ -18,18 +18,18 @@
     --font-size-3: 2rem;
     --text-color: #e5e5e5;
 
-    --section-odd-background-color: #0c0a1a;
-    --section-even-background-color: #0c0a1a;
+    --section-odd-background-color: #000;
+    --section-even-background-color: #000;
     --section-padding: 1.4rem;
     --section-space-padding: 2rem;
 
     --hero-section-height: calc(100vh - 70px);
 
     --card-border-radius: 0 0 5px 5px;
-    --card-background-color: #221c48;
+    --card-background-color: hsl(from var(--section-even-background-color) h s calc(l + 12));
     --card-div-padding: calc((5 / 16) * 1rem) calc((10 / 16) * 1rem);
     --card-page-link-color: #ff7518;
-    --card-page-link-hover-color: #3b4e6c;
+    --card-page-link-hover-color: hsl(from var(--accent-color-1) h s calc(l - 20));
     --card-page-link-transition: all 0.3s ease-in-out;
     /*--cards-container-scrollbar-color: #3a317a;*/
     --cards-container-scrollbar-color: var(--accent-color-1);
@@ -46,7 +46,7 @@
     --call-to-action-hover-background-color: #0c0a1a;
     --call-to-action-hover-color: #ff7518;
 
-    --nav-background-color: #1a1537;
+    --nav-background-color: hsl(from var(--section-even-background-color) h s calc(l + 20));
     --nav-sidebar-cut-width: 1024px;
 
     --footer-background-color: #16122f;
@@ -63,7 +63,7 @@
 * {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 350;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
@@ -109,18 +109,22 @@ section > .section-header > h2 {
 
 section > .section-header > p {
     margin: 0.25rem 0;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 .hero-section {
     min-height: var(--hero-section-height);
     text-align: center;
-    background-image: url("someimage.png");
-    background-position: top left;
+    background-image: url("hero.png");
+    background-position: center center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero-section > div {
@@ -148,6 +152,7 @@ section > .section-header > p {
     position: relative;
     container-type: inline-size;
     container-name: about-section;
+    gap: 1rem;
 }
 
 .about-section > div {
@@ -185,8 +190,9 @@ section > .section-header > p {
         justify-content: center;
         margin-top: var(--section-space-padding);
     }
-    .section-header {
+    .about-section > .section-header {
         align-items: center;
+        text-align: center;
     }
     .card-img-container {
         margin-top: 5rem;
@@ -533,66 +539,68 @@ section > div:has(.call-to-action) {
     color: var(--call-to-action-hover-color);
 }
 
-footer {
+footer > div {
     background-color: var(--footer-background-color);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-size: 1rem;
-    font-weight: 250;
-    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 350;
+    gap: 2rem;
     padding: var(--section-padding);
 }
 
-footer .footer-title {
-    font-size: 1.3rem;
-    font-weight: 800;
+footer > div .footer-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 1rem 0 2rem 0;
 }
 
-footer a {
+footer > div a {
     cursor: pointer;
     text-decoration: none;
 }
 
-footer * {
+footer > div * {
     font-size: inherit;
     font-weight: inherit;
 }
 
-footer > div {
+footer > div > div {
     flex: 1 1 500px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-items: center;
     justify-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-footer > div:nth-child(2) {
+footer > div > div:nth-child(2) {
     display: flex;
     justify-content: space-between;
 }
 
-footer > div > div {
+footer > div > div > div {
     width: 100%;
     height: 100%;
 }
 
-footer .footer-heading {
+footer > div .footer-heading {
+    font-size: 1.1rem;
     font-weight: 450;
 }
 
-footer > div > :first-child > .social-media-handles .footer-heading {
+footer > div > div > :first-child > .social-media-handles .footer-heading {
     flex: 1 0 100%;
 }
 
-footer > div > :first-child {
+footer > div > div > :first-child {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-footer > div > :first-child > .social-media-handles {
+footer > div > div > :first-child > .social-media-handles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -603,13 +611,16 @@ footer > div > :first-child > .social-media-handles {
     container-type: inline-size;
 }
 
-footer > div > :first-child > .social-media-handles > a > i {
+footer > div > div > :first-child > .social-media-handles > a > i {
     width: 30px;
     height: 30px;
     display: inline-block;
+    > span {
+        display: block;
+    }
 }
 
-footer > div > :first-child > .social-media-handles > a > i > img {
+footer > div > div > :first-child > .social-media-handles > a > i > img {
     width: 100%;
     height: 100%;
     object-fit: fill;
@@ -626,20 +637,41 @@ footer > div > :first-child > .social-media-handles > a > i > img {
     }
 }
 
-footer > div > .quick-links {
+footer > div > div > .quick-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
     container-type: inline-size;
     container-name: quick-links-container;
 }
 
-footer > div > .quick-links > :first-child {
+footer > div > div > .quick-links > :first-child {
     grid-column: 1 / -1;
     padding: 0.5rem 0;
 }
 
-footer > div > .quick-links > a {
-    padding: 0.2rem 0
+footer > div > div > .quick-links > a {
+    padding: 0.5rem 0
+}
+
+footer > div > div > .quick-links > a > i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer > div > div > .quick-links > a > i > svg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    fill: white;
+}
+
+footer > div > div > .quick-links > a > i > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: none;
 }
 
 @container quick-links-container (max-width: 100px) {
@@ -648,21 +680,42 @@ footer > div > .quick-links > a {
     }
 }
 
-footer > div > .contact-us {
+footer > div > div > .contact-us {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.8rem;
     width: revert;
 }
 
-footer > div > .footer-img {
+footer > div > div > .contact-us > a {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+}
+
+footer > div > div > .contact-us > a > i {
+    flex: 1 0 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer > div > div > .contact-us > a > i > svg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    fill: white;
+}
+
+footer > div > div > .footer-img {
     max-width: 120px;
 }
 
-footer > div > .footer-img > img {
+footer > div > div > .footer-img > img {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -670,9 +723,11 @@ footer > div > .footer-img > img {
 }
 
 footer > .copyrights {
-    padding: 0rem;
+    padding: 1rem;
     text-align: center;
     flex: 1 1 100%;
     display: block;
-    font-weight: 300;
+    font-size: 1.15rem;
+    font-weight: 400;
+    background: black;
 }
