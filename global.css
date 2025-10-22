@@ -403,6 +403,86 @@ section > .section-header > p {
     grid-column: span 2;
 }
 
+.projects-section > .projects-container {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.projects-section > .projects-container > .project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    container-type: inline-size;
+    container-name: project;
+}
+
+.projects-section > .projects-container > .project:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.projects-section > .projects-container > .project > div {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.projects-section > .projects-container > .project > .project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1rem;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    text-align: left;
+    padding: 1rem;
+}
+
+.projects-section > .projects-container > .project:nth-child(2n) > .project-details {
+    align-items: flex-end;
+}
+
+>.projects-section > .projects-container > .project:nth-child(2n) > .project-details > .project-description {
+    text-align: right;
+}
+
+.projects-section > .projects-container > .project > .project-details > .project-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.projects-section > .projects-container > .project > .project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@container project (max-width: 800px) {
+    .project-details > .project-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .project-details {
+        align-items: center;
+    }
+    .project-image-container {
+        margin-top: 3rem;
+    }
+}
+
+
 section > div:has(.call-to-action) {
     text-align: center;
     padding: 1rem;
