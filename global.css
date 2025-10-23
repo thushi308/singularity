@@ -47,7 +47,7 @@
     --call-to-action-hover-color: #ff7518;
 
     --nav-background-color: hsl(from var(--section-even-background-color) h s calc(l + 20));
-    --nav-sidebar-cut-width: 1024px;
+    --nav-sidebar-cut-width: 1170px;
 
     --footer-background-color: #16122f;
 }
@@ -116,7 +116,7 @@ section > .section-header > p {
 .hero-section {
     min-height: var(--hero-section-height);
     text-align: center;
-    background-image: url("hero.png");
+    background-image: url("hero_image.jpg");
     background-position: center center;
     display: flex;
     flex-direction: column;
@@ -385,13 +385,13 @@ section > .section-header > p {
     flex: 1 1 250px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1.5fr 1fr;
+    grid-template-rows: 2fr 1fr;
     max-width: 600px;
     gap: 1rem;
 }
 
 .gallery-section > .images-container > div:last-child {
-    grid-template-rows: 1fr 1.5fr;
+    grid-template-rows: 1fr 2fr;
 }
 
 /*.gallery-section > .images-container > div > .image {
@@ -403,6 +403,7 @@ section > .section-header > p {
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    aspect-ratio: 1 / 1;
 }
 
 .gallery-section > .images-container > div:first-child > .image:first-child, .gallery-section > .images-container > div:last-child > .image:last-child {
@@ -479,7 +480,8 @@ section > .section-header > p {
 .projects-section > .projects-container > .project > .project-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    max-height: 500px;
 }
 
 @container project (max-width: 800px) {
@@ -515,6 +517,7 @@ section > .section-header > p {
 .youtube-section > .youtube-card > iframe {
     width: 100%;
     max-width: 1120px;
+    max-height: 50vh;
 }
 
 section > div:has(.call-to-action) {

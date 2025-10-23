@@ -129,7 +129,7 @@ nav .sidebar > div > div > :first-child > span > svg {
     transform: translateY(-50%);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1170px) {
     nav .sidebar {
         position: fixed;
         top: 0;
