@@ -142,6 +142,14 @@ section > .section-header > p {
     right: 0;
     padding: 0.8rem;
 }
+.hero-background-wrapper {
+    background-image: url("hero_image.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .about-section {
     display: flex;
@@ -734,3 +742,5 @@ footer > .copyrights {
     font-weight: 400;
     background: black;
 }
+
+

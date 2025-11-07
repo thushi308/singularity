@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINGULARITY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="navbar.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="assets/Logo.png" alt="Logo" class="logo">
+            </div>
+            <input type="checkbox" id="sidebar-toggle">
+            <label for="sidebar-toggle" class="open-sidebar-button">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="30" viewBox="0 0 24 24"><path d="M5,7h2h12c1.1,0,2-0.9,2-2s-0.9-2-2-2H7H5C3.9,3,3,3.9,3,5S3.9,7,5,7z"></path><path d="M19,10h-3H5c-1.1,0-2,0.9-2,2s0.9,2,2,2h11h3c1.1,0,2-0.9,2-2S20.1,10,19,10z"></path><path d="M19,17h-6H5c-1.1,0-2,0.9-2,2s0.9,2,2,2h8h6c1.1,0,2-0.9,2-2S20.1,17,19,17z"></path></svg>
+            </label>
+            <div class="sidebar">
+                <div>
+                    <label for="sidebar-toggle" class="close-sidebar-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 72 72"><path d="M 19 15 C 17.977 15 16.951875 15.390875 16.171875 16.171875 C 14.609875 17.733875 14.609875 20.266125 16.171875 21.828125 L 30.34375 36 L 16.171875 50.171875 C 14.609875 51.733875 14.609875 54.266125 16.171875 55.828125 C 16.951875 56.608125 17.977 57 19 57 C 20.023 57 21.048125 56.609125 21.828125 55.828125 L 36 41.65625 L 50.171875 55.828125 C 51.731875 57.390125 54.267125 57.390125 55.828125 55.828125 C 57.391125 54.265125 57.391125 51.734875 55.828125 50.171875 L 41.65625 36 L 55.828125 21.828125 C 57.390125 20.266125 57.390125 17.733875 55.828125 16.171875 C 54.268125 14.610875 51.731875 14.609875 50.171875 16.171875 L 36 30.34375 L 21.828125 16.171875 C 21.048125 15.391875 20.023 15 19 15 z"></path></svg>
+                    </label>
+                    <a href="#">Home</a>
+                   <div>
+                        <div>Our Activities<span><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="white" fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z" fill="#000000"/></svg></span></div>
+                        <div class="dropdown">
+                            <div>
+                                <a href="#">Events</a>
+                                <a href="#">Workshops</a>
+                                <a href="#">Talks</a>
+                                <a href="#">Talking 2D Stars</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div>
+                        <div>Projects<span><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="white" fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z" fill="#000000"/></svg></span></div>
+                        <div class="dropdown">
+                            <div>
+                                <a href="#">Radio Antenna</a>
+                           </div>
+                        </div>
+                    </div>
+                    <a href="#">ISAAC</a>
+                    <a href="#">Equipments</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Team</a>
+                    <a href="#">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section" style="text-align: center; padding-bottom: 0;">
+            <div>
+                <h1 class="">Radio Antenna</h1>
+            </div>
+        </section>
+
+        <section class="section about-section" style="align-items: flex-start; padding-top: 1.5rem;">
+            
+            <div class="card-img-container" style="flex: 0 0 30%; max-width: 30%;">
+                <img src="up1.jpg" alt="Antenna" style="width: 100%; height: auto; border-radius: 5px;">
+            </div>
+
+            <div style="flex: 1 1 65%; text-align: left; padding-left: 2rem;">
+                <h2>About the Project</h2>
+                <p>
+                    description description description description description description description description description description description description description description description description description description description description description description description description description 
+                </p>
+            </div>
+
+        </section>
+
+        <section class="section" style="padding-top: 1.5rem;">
+            <div class="section-header">
+                <h2>What We Are Doing</h2>
+            </div>
+            <p style="padding-top: 1rem;">
+                Content about what you are doing goes here. You can describe the current status, methodology, or goals of the radio antenna project. This is placeholder text to show where your content will live.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Team</h2>
+            </div>
+
+            <div class="about-section" style="align-items: flex-start; padding-top: 1.5rem;">
+                
+                <div style="flex: 0 0 40%; max-width: 40%;">
+                    <h3>Members</h3>
+                    
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <img src="path/to/member1-image.jpg" alt="Photo of Member 1" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
+                        <span>Member 1 Name</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <img src="path/to/member2-image.jpg" alt="Photo of Member 2" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
+                        <span>Member 2 Name</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <img src="path/to/member3-image.jpg" alt="Photo of Member 3" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
+                        <span>Member 3 Name</span>
+                    </div>
+
+                </div>
+
+                <div style="flex: 1 1 55%; text-align: left; padding-left: 2rem;">
+                    <h3>Guides</h3>
+                    
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <img src="gal6.jpeg" alt="Photo of Guide 1" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
+                        <span>Guide 1 Name</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <img src="path/to/guide2-image.jpg" alt="Photo of Guide 2" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
+                        <span>Guide 2 Name</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Resources</h2>
+            </div>
+
+            <div class="resource-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; padding-top: 1.5rem;">
+
+                <div class="resource-item" style="flex: 1 1 45%; min-width: 300px; background-color: #1a1a1a; padding: 1.5rem; border-radius: 5px;">
+                    <h3>Resource Title 1</h3>
+                    <p>Brief description of the resource.</p>
+                    <a href="path/to/resource1.html" class="card-page-link" style="padding-top: 0.5rem; display: inline-block;">Learn More</a>
+                </div>
+
+                <div class="resource-item" style="flex: 1 1 45%; min-width: 300px; background-color: #1a1a1a; padding: 1.5rem; border-radius: 5px;">
+                    <h3>Resource Title 2</h3>
+                    <p>Brief description of the resource.</p>
+                    <a href="path/to/resource2.html" class="card-page-link" style="padding-top: 0.5rem; display: inline-block;">Learn More</a>
+                </div>
+
+                <div class="resource-item" style="flex: 1 1 45%; min-width: 300px; background-color: #1a1a1a; padding: 1.5rem; border-radius: 5px;">
+                    <h3>Resource Title 3</h3>
+                    <p>Brief description of the resource.</p>
+                    <a href="path/to/resource3.html" class="card-page-link" style="padding-top: 0.5rem; display: inline-block;">Learn More</a>
+                </div>
+
+                <div class="resource-item" style="flex: 1 1 45%; min-width: 300px; background-color: #1a1a1a; padding: 1.5rem; border-radius: 5px;">
+                    <h3>Resource Title 4</h3>
+                    <p>Brief description of the resource.</p>
+                    <a href="path/to/resource4.html" class="card-page-link" style="padding-top: 0.5rem; display: inline-block;">Learn More</a>
+                </div>
+
+                <div class="resource-item" style="flex: 1 1 45%; min-width: 300px; background-color: #1a1a1a; padding: 1.5rem; border-radius: 5px;">
+                    <h3>Resource Title 5</h3>
+                    <p>Brief description of the resource.</p>
+                    <a href="path/to/resource5.html" class="card-page-link" style="padding-top: 0.5rem; display: inline-block;">Learn More</a>
+                </div>
+
+                <div class="resource-item" style="flex: 1 1 45%; min-width: 300px; background-color: #1a1a1a; padding: 1.5rem; border-radius: 5px;">
+                    <h3>Resource Title 6</h3>
+                    <p>Brief description of the resource.</p>
+                    <a href="path/to/resource6.html" class="card-page-link" style="padding-top: 0.5rem; display: inline-block;">Learn More</a>
+                </div>
+
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <h2>Next Steps</h2>
+            </div>
+
+            <p style="padding-top: 1.5rem; text-align: left; max-width: 800px; margin: 0 auto;">
+                Here, you can describe the future plans for the project. This might include upcoming research phases, plans for data analysis, potential upgrades to the equipment, or future collaborations. This text is a placeholder to show where your content will go.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Findings</h2>
+            </div>
+
+            <div class="about-section" style="align-items: center; padding-top: 1.5rem; gap: 0;">
+                <div style="flex: 1 1 70%; padding-right: 2rem;">
+                    <h3>Finding 1</h3>
+                    <p>
+                        Description of the first finding. This text block takes up 70% of the width, allowing for detailed explanation.
+                    </p>
+                </div>
+                <div style="flex: 0 0 30%; max-width: 30%;">
+                    <img src="fea3.jpg" alt="Image for finding 1" style="width: 100%; height: auto; border-radius: 5px;">
+                </div>
+            </div>
+
+            <div class="about-section" style="align-items: center; padding-top: 1.5rem; gap: 0;">
+                <div style="flex: 0 0 30%; max-width: 30%;">
+                    <img src="fea2.jpg" alt="Image for finding 2" style="width: 100%; height: auto; border-radius: 5px;">
+                </div>
+                <div style="flex: 1 1 70%; text-align: left; padding-left: 2rem;">
+                    <h3>Finding 2</h3>
+                    <p>
+                        Description of the second finding. This text block takes up 70% of the width, with the image on the left.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-section" style="align-items: center; padding-top: 1.5rem; gap: 0;">
+                <div style="flex: 1 1 70%; padding-right: 2rem;">
+                    <h3>Finding 3</h3>
+                    <p>
+                        Description of the third finding. This layout is flipped again, matching the first finding with 70% text on the left.
+                    </p>
+                </div>
+                <div style="flex: 0 0 30%; max-width: 30%;">
+                    <img src="fea1.jpg" alt="Image for finding 3" style="width: 100%; height: auto; border-radius: 5px;">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Photos</h2>
+            </div>
+
+            <div class="photo-gallery-preview" style="display: flex; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem;">
+                
+                <div style="flex: 1 1 30%; min-width: 250px;">
+                    <img src="up1.jpg" alt="Gallery preview image 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+                </div>
+
+                <div style="flex: 1 1 30%; min-width: 250px;">
+                    <img src="up2.jpg" alt="Gallery preview image 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+                </div>
+
+                <div style="flex: 1 1 30%; min-width: 250px;">
+                    <img src="up3.jpg" alt="Gallery preview image 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 2rem 0 1rem 0;">
+                <a href="gallery.html" class="call-to-action">View All</a>
+            </div>
+        </section>
+
+
+        <footer>
+            <div>
+                <div>
+                    <div>
+                        <div class="footer-title">SINGULARITY</div>
+                        <div class="social-media-handles">
+                            <p class="footer-heading">Follow us on</p>
+                            <a href="https://www.instagram.com/singularity_iiserk/">
+                                <i>
+                                    <img src="https://www.svgrepo.com/show/349410/instagram.svg">
+                                </i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://x.com/singularity_ik">
+                                <i>
+                                    <img style="filter: invert(100%)" src="https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png">
+                                </i>
+                                <span>X</span>
+                            </a>
+    <a href="https://www.linkedin.com/in/singularity-the-astronomy-club-of-iiser-kolkata-7538382a2/">
+                                <i>
+                                    <img src="https://www.svgrepo.com/show/349436/linkedin.svg">
+                                </i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.youtube.com/@SingularityIISERK">
+                                <i>
+                                    <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                                </i>
+                                <span>You Tube</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="quick-links">
+                        <p class="footer-heading">Quick Links</p>
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 72 72"><path d="M 36 10 C 34.861 10 33.722922 10.386609 32.794922 11.162109 L 11.517578 28.941406 C 10.052578 30.165406 9.5519375 32.270219 10.460938 33.949219 C 11.711938 36.258219 14.661453 36.740437 16.564453 35.148438 L 35.359375 19.445312 C 35.730375 19.135313 36.269625 19.135313 36.640625 19.445312 L 55.435547 35.148438 C 56.183547 35.774437 57.093047 36.078125 57.998047 36.078125 C 59.171047 36.078125 60.333953 35.567219 61.126953 34.574219 C 62.503953 32.850219 62.112922 30.303672 60.419922 28.888672 L 58 26.867188 L 58 16.667969 C 58 15.194969 56.805984 14 55.333984 14 L 52.667969 14 C 51.194969 14 50 15.194969 50 16.667969 L 50 20.181641 L 39.205078 11.162109 C 38.277078 10.386609 37.139 10 36 10 z M 35.996094 22.925781 L 13.996094 41.302734 L 13.996094 50 C 13.996094 54.418 17.578094 58 21.996094 58 L 49.996094 58 C 54.414094 58 57.996094 54.418 57.996094 50 L 57.996094 41.302734 L 35.996094 22.925781 z M 32 38 L 40 38 C 41.105 38 42 38.895 42 40 L 42 50 L 30 50 L 30 40 C 30 38.895 30.895 38 32 38 z"></path></svg>
+                                <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                            </i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 72 72"><path d="M 36 10 C 34.861 10 33.722922 10.386609 32.794922 11.162109 L 11.517578 28.941406 C 10.052578 30.165406 9.5519375 32.270219 10.460938 33.949219 C 11.711938 36.258219 14.661453 36.740437 16.564453 35.148438 L 35.359375 19.445312 C 35.730375 19.135313 36.269625 19.135313 36.640625 19.445312 L 55.435547 35.148438 C 56.183547 35.774437 57.093047 36.078125 57.998047 36.078125 C 59.171047 36.078125 60.333953 35.567219 61.126953 34.574219 C 62.503953 32.850219 62.112922 30.303672 60.419922 28.888672 L 58 26.867188 L 58 16.667969 C 58 15.194969 56.805984 14 55.333984 14 L 52.667969 14 C 51.194969 14 50 15.194969 50 16.667969 L 50 20.181641 L 39.205078 11.162109 C 38.277078 10.386609 37.139 10 36 10 z M 35.996094 22.925781 L 13.996094 41.302734 L 13.996094 50 C 13.996094 54.418 17.578094 58 21.996094 58 L 49.996094 58 C 54.414094 58 57.996094 54.418 57.996094 50 L 57.996094 41.302734 L 35.996094 22.925781 z M 32 38 L 40 38 C 41.105 38 42 38.895 42 40 L 42 50 L 30 50 L 30 40 C 30 38.895 30.895 38 32 38 z"></path></svg>
+                                <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                            </i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 72 72"><path d="M 36 10 C 34.861 10 33.722922 10.386609 32.794922 11.162109 L 11.517578 28.941406 C 10.052578 30.165406 9.5519375 32.270219 10.460938 33.949219 C 11.711938 36.258219 14.661453 36.740437 16.564453 35.148438 L 35.359375 19.445312 C 35.730375 19.135313 36.269625 19.135313 36.640625 19.445312 L 55.435547 35.148438 C 56.183547 35.774437 57.093047 36.078125 57.998047 36.078125 C 59.171047 36.078125 60.333953 35.567219 61.126953 34.574219 C 62.503953 32.850219 62.112922 30.303672 60.419922 28.888672 L 58 26.867188 L 58 16.667969 C 58 15.194969 56.805984 14 55.333984 14 L 52.667969 14 C 51.194969 14 50 15.194969 50 16.667969 L 50 20.181641 L 39.205078 11.162109 C 38.277078 10.386609 37.139 10 36 10 z M 35.996094 22.925781 L 13.996094 41.302734 L 13.996094 50 C 13.996094 54.418 17.578094 58 21.996094 58 L 49.996094 58 C 54.414094 58 57.996094 54.418 57.996094 50 L 57.996094 41.302734 L 35.996094 22.925781 z M 32 38 L 40 38 C 41.105 38 42 38.895 42 40 L 42 50 L 30 50 L 30 40 C 30 38.895 30.895 38 32 38 z"></path></svg>
+                                <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                            </i>
+                            <span>Events</span>
+                        </a>
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 72 72"><path d="M 36 10 C 34.861 10 33.722922 10.386609 32.794922 11.162109 L 11.517578 28.941406 C 10.052578 30.165406 9.5519375 32.270219 10.460938 33.949219 C 11.711938 36.258219 14.661453 36.740437 16.564453 35.148438 L 35.359375 19.445312 C 35.730375 19.135313 36.269625 19.135313 36.640625 19.445312 L 55.435547 35.148438 C 56.183547 35.774437 57.093047 36.078125 57.998047 36.078125 C 59.171047 36.078125 60.333953 35.567219 61.126953 34.574219 C 62.503953 32.850219 62.112922 30.303672 60.419922 28.888672 L 58 26.867188 L 58 16.667969 C 58 15.194969 56.805984 14 55.333984 14 L 52.667969 14 C 51.194969 14 50 15.194969 50 16.667969 L 50 20.181641 L 39.205078 11.162109 C 38.277078 10.386609 37.139 10 36 10 z M 35.996094 22.925781 L 13.996094 41.302734 L 13.996094 50 C 13.996094 54.418 17.578094 58 21.996094 58 L 49.996094 58 C 54.414094 58 57.996094 54.418 57.996094 50 L 57.996094 41.302734 L 35.996094 22.925781 z M 32 38 L 40 38 C 41.105 38 42 38.895 42 40 L 42 50 L 30 50 L 30 40 C 30 38.895 30.895 38 32 38 z"></path></svg>
+                                <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                            </i>
+                            <span>Projects</span>
+                        </a>
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 72 72"><path d="M 36 10 C 34.861 10 33.722922 10.386609 32.794922 11.162109 L 11.517578 28.941406 C 10.052578 30.165406 9.5519375 32.270219 10.460938 33.949219 C 11.711938 36.258219 14.661453 36.740437 16.564453 35.148438 L 35.359375 19.445312 C 35.730375 19.135313 36.269625 19.135313 36.640625 19.445312 L 55.435547 35.148438 C 56.183547 35.774437 57.093047 36.078125 57.998047 36.078125 C 59.171047 36.078125 60.333953 35.567219 61.126953 34.574219 C 62.503953 32.850219 62.112922 30.303672 60.419922 28.888672 L 58 26.867188 L 58 16.667969 C 58 15.194969 56.805984 14 55.333984 14 L 52.667969 14 C 51.194969 14 50 15.194969 50 16.667969 L 50 20.181641 L 39.205078 11.162109 C 38.277078 10.386609 37.139 10 36 10 z M 35.996094 22.925781 L 13.996094 41.302734 L 13.996094 50 C 13.996094 54.418 17.578094 58 21.996094 58 L 49.996094 58 C 54.414094 58 57.996094 54.418 57.996094 50 L 57.996094 41.302734 L 35.996094 22.925781 z M 32 38 L 40 38 C 41.105 38 42 38.895 42 40 L 42 50 L 30 50 L 30 40 C 30 38.895 30.895 38 32 38 z"></path></svg>
+                                <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                            </i>
+                            <span>Blogs</span>
+                        </a>
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 72 72"><path d="M 36 10 C 34.861 10 33.722922 10.386609 32.794922 11.162109 L 11.517578 28.941406 C 10.052578 30.165406 9.5519375 32.270219 10.460938 33.949219 C 11.711938 36.258219 14.661453 36.740437 16.564453 35.148438 L 35.359375 19.445312 C 35.730375 19.135313 36.269625 19.135313 36.640625 19.445312 L 55.435547 35.148438 C 56.183547 35.774437 57.093047 36.078125 57.998047 36.078125 C 59.171047 36.078125 60.333953 35.567219 61.126953 34.574219 C 62.503953 32.850219 62.112922 30.303672 60.419922 28.888672 L 58 26.867188 L 58 16.667969 C 58 15.194969 56.805984 14 55.333984 14 L 52.667969 14 C 51.194969 14 50 15.194969 50 16.667969 L 50 20.181641 L 39.205078 11.162109 C 38.277078 10.386609 37.139 10 36 10 z M 35.996094 22.925781 L 13.996094 41.302734 L 13.996094 50 C 13.996094 54.418 17.578094 58 21.996094 58 L 49.996094 58 C 54.414094 58 57.996094 54.418 57.996094 50 L 57.996094 41.302734 L 35.996094 22.925781 z M 32 38 L 40 38 C 41.105 38 42 38.895 42 40 L 42 50 L 30 50 L 30 40 C 30 38.895 30.895 38 32 38 z"></path></svg>
+                                <img src="https://www.svgrepo.com/show/349577/youtube.svg">
+                            </i>
+                            <span>Team</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-us">
+                        <p class="footer-heading">Contact</p>
+                        <a href="" class="address">
+                            <i>
+                                <svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M403.703,306.658h-54.081c-5.191,7.778-10.747,15.525-16.672,23.217c-33.188,43.091-66.071,69.535-67.455,70.64L256,408.096l-9.496-7.581c-1.384-1.105-34.267-27.549-67.455-70.64c-5.925-7.692-11.482-15.439-16.672-23.217h-54.081L0,471.348h512L403.703,306.658z"/></g></g><g><g><path d="M255.999,40.652c-63.172,0-114.564,51.393-114.564,114.565c0,101.037,85.548,187.024,114.57,213.282c11.713-10.582,32.613-30.85,53.272-57.773c27.96-36.434,61.288-92.989,61.288-155.509C370.565,92.045,319.171,40.652,255.999,40.652z M256,213.648c-32.218,0-58.43-26.211-58.43-58.43c0-32.219,26.211-58.431,58.43-58.431s58.43,26.211,58.43,58.431C314.43,187.437,288.218,213.648,256,213.648z"/></g></g></svg>
+                            </i>
+                            <span>IISER Kolkata, Haringhata Farm, Nadia, West Bengal, India - 741 246</span>
+                        </a>
+                        <a href="mailto:singulartiy@iiserkol.ac.in" class="email">
+                            <i>
+                                <svg fill="#000000" width="800px" height="800px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><path d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z" fill-rule="evenodd"/></svg>
+                            </i>
+                            <span>singularity@iIserkol.ac.in</span>
+                        </a>
+                    </div>
+                    </div>
+            </div>
+            <div class="copyrights">
+                © All copyrights reserved (2025) by Singularity
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
