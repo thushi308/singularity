@@ -124,9 +124,8 @@ nav .sidebar > div > div > :first-child > span {
 }
 
 nav .sidebar > div > div > :first-child > span > svg {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    transform: translateY(23%);
 }
 
 @media (max-width: 1170px) {
