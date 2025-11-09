@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="script.js"></script>
+<style>
+        .resource-item:hover {
+            transform: scale(1.03); /* Makes the item slightly larger */
+            filter: brightness(1.2); /* Makes it slightly brighter */
+            transition: transform 0.2s ease-out, filter 0.2s ease-out; /* Smooth transition */
+            cursor: pointer; /* Changes mouse to a pointer */
+        }
+
+        /* This makes the page background black, creating the 'border' color */
+        body {
+            background-color: #000;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -116,16 +129,16 @@
                 </div>
 
                 <div style="flex: 1 1 55%; text-align: left; padding-left: 2rem;">
-                    <h3>Guides</h3>
+                    <h3>Profs:</h3>
                     
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
                         <img src="gal6.jpeg" alt="Photo of Guide 1" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
-                        <span>Guide 1 Name</span>
+                        <span>Prof 1 Name</span>
                     </div>
 
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
                         <img src="path/to/guide2-image.jpg" alt="Photo of Guide 2" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
-                        <span>Guide 2 Name</span>
+                        <span>Prof  2 Name</span>
                     </div>
                 </div>
 
