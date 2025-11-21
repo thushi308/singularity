@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="script.js"></script>
+<style>
+        .resource-item:hover {
+            transform: scale(1.03); /* Makes the item slightly larger */
+            filter: brightness(1.2); /* Makes it slightly brighter */
+            transition: transform 0.2s ease-out, filter 0.2s ease-out; /* Smooth transition */
+            cursor: pointer; /* Changes mouse to a pointer */
+        }
+
+        /* This makes the page background black, creating the 'border' color */
+        body {
+            background-color: #000;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -116,19 +129,58 @@
                 </div>
 
                 <div style="flex: 1 1 55%; text-align: left; padding-left: 2rem;">
-                    <h3>Guides</h3>
+                    <h3>Profs:</h3>
                     
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
                         <img src="gal6.jpeg" alt="Photo of Guide 1" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
-                        <span>Guide 1 Name</span>
+                        <span>Prof 1 Name</span>
                     </div>
 
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
                         <img src="path/to/guide2-image.jpg" alt="Photo of Guide 2" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;">
-                        <span>Guide 2 Name</span>
+                        <span>Prof  2 Name</span>
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Next Steps</h2>
+            </div>
+
+            <p style="padding-top: 1.5rem; text-align: left; max-width: 800px; margin: 0 auto;">
+                Here, you can describe the future plans for the project. This might include upcoming research phases, plans for data analysis, potential upgrades to the equipment, or future collaborations. This text is a placeholder to show where your content will go.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Photos</h2>
+            </div>
+
+            <div class="photo-gallery-preview" style="display: flex; gap: 1rem; padding-top: 1.5rem;">
+                
+                <div style="flex: 1 1 0; min-width: 250px;">
+                    <img src="up1.jpg" alt="Gallery preview image 1" style="width: 100%; height: 400px; object-fit: cover; border-radius: 5px;">
+                </div>
+
+                <div style="flex: 1 1 0; min-width: 250px;">
+                    <img src="up2.jpg" alt="Gallery preview image 2" style="width: 100%; height: 400px; object-fit: cover; border-radius: 5px;">
+                </div>
+
+                <div style="flex: 1 1 0; min-width: 250px;">
+                    <img src="up3.jpg" alt="Gallery preview image 3" style="width: 100%; height: 400px; object-fit: cover; border-radius: 5px;">
+                </div>
+
+                <div style="flex: 1 1 0; min-width: 250px;">
+                    <img src="up3.jpg" alt="Gallery preview image 3" style="width: 100%; height: 400px; object-fit: cover; border-radius: 5px;">
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 2rem 0 1rem 0;">
+                <a href="gallery.html" class="call-to-action">View All</a>
             </div>
         </section>
 
@@ -178,15 +230,7 @@
             </div>
         </section>
         
-        <section class="section">
-            <div class="section-header">
-                <h2>Next Steps</h2>
-            </div>
-
-            <p style="padding-top: 1.5rem; text-align: left; max-width: 800px; margin: 0 auto;">
-                Here, you can describe the future plans for the project. This might include upcoming research phases, plans for data analysis, potential upgrades to the equipment, or future collaborations. This text is a placeholder to show where your content will go.
-            </p>
-        </section>
+        
 
         <section class="section">
             <div class="section-header">
@@ -230,30 +274,7 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="section-header">
-                <h2>Photos</h2>
-            </div>
-
-            <div class="photo-gallery-preview" style="display: flex; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem;">
-                
-                <div style="flex: 1 1 30%; min-width: 250px;">
-                    <img src="up1.jpg" alt="Gallery preview image 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
-                </div>
-
-                <div style="flex: 1 1 30%; min-width: 250px;">
-                    <img src="up2.jpg" alt="Gallery preview image 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
-                </div>
-
-                <div style="flex: 1 1 30%; min-width: 250px;">
-                    <img src="up3.jpg" alt="Gallery preview image 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
-                </div>
-            </div>
-
-            <div style="text-align: center; padding: 2rem 0 1rem 0;">
-                <a href="gallery.html" class="call-to-action">View All</a>
-            </div>
-        </section>
+        
 
 
         <footer>
