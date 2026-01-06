@@ -24,7 +24,6 @@ body {
   max-width: 90vw;
   margin: 2.5rem auto;
   font-family: var(--main-body-font);
-  /* padding: 0 2rem;  */
 }
 
 .page-title {
@@ -200,18 +199,19 @@ body {
 }
 
 .gallery-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
   gap: 1rem;
+  align-items: stretch;
 }
 
 .group-photo {
-  flex: 1;
-  min-width: 300px;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-column: 1;
+  grid-row: 1 / 4;
+  min-height: 520px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .other-photos {
@@ -222,8 +222,7 @@ body {
   gap: 1rem;
 }
 
-.group-photo img,
-.few-photo img {
+.group-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -233,55 +232,88 @@ body {
 }
 
 .group-photo:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .group-photo:hover img {
-  transform: scale(1.005);
+  transform: scale(1.03);
 }
 
-.few-photo:hover {
-  transform: translateY(-2px);
+.small-photo:hover {
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.few-photo:hover img {
-  transform: scale(1.05);
+.small-photo:hover img {
+  transform: scale(1.06);
 }
 
-.small-photos-row {
-  display: flex;
-  gap: 1rem;
+.group-photo,
+.small-photo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
-.few-photo {
-  flex: 1;
-  border-radius: 5px;
+.small-photo {
+  min-height: 180px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.small-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.small-photo:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.small-photo:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.small-photo:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.small-photo:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .view-all-btn {
+  grid-column: 2 / 4;
+  grid-row: 3;
+  align-self: end;
+
   padding: 12px 20px;
   font-size: 1rem;
   font-weight: bold;
+
   color: #333;
   background-color: #fff;
   border: 2px solid #333;
-  cursor: pointer;
   border-radius: 30px;
+
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .view-all-btn:hover {
   background-color: #333;
   color: #fff;
-  border: 2px solid #ff6666;
+  border-color: #ff6666;
 }
 
-
-
 /* --------- mobile-repsonsive ---------- */
-
 
 @media (max-width: 600px) {
   .page-container {
@@ -298,39 +330,97 @@ body {
 
   .main-event-details,
   .author-section,
-  .resources-list,
-  .gallery-container {
+  .resources-list {
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
 
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .group-photo {
+    width: 100%;
+    min-height: 260px;
+  }
+
+  .small-photo {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .small-photo:nth-child(n + 4) {
+    display: none;
+  }
+
+  .view-all-btn {
+    align-self: center;
+    width: auto;
+    margin-top: 0.5rem;
+  }
+
   .author-photo {
-    flex: 0 0 100%;
-    min-width: unset;
+    width: 100%;
     min-height: 150px;
   }
 
   .resources-list ul {
-    min-width: unset;
-    flex: 0 0 100%;
+    width: 100%;
   }
 
-  .group-photo,
-  .other-photos {
-    min-width: unset;
+  .small-photos-row,
+  .few-photo {
+    all: unset;
+  }
+}
+
+@media (min-width: 1600px) {
+  .page-container {
+    max-width: 1400px;
+    margin: 4rem auto;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .event-title {
+    font-size: 4rem;
+  }
+
+  .event-details h4 {
+    font-size: 1.8rem;
+  }
+
+  .event-details p,
+  .event-description p,
+  .author-bio p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .gallery-container {
+    grid-template-columns: 3fr 1.5fr 1.5fr;
+    gap: 1.5rem;
   }
 
   .group-photo {
-    min-height: 250px;
-    flex: 0 0 100%;
+    min-height: 520px;
   }
 
-  .small-photos-row {
-    flex-direction: row;
-    gap: 0.5rem;
+  .small-photo {
+    min-height: 240px;
   }
 
-  .few-photo {
-    min-height: 120px;
+  .view-all-btn {
+    font-size: 1.2rem;
+    padding: 16px 28px;
+  }
+
+  .author-photo {
+    min-height: 260px;
   }
 }
