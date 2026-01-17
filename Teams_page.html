@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINGULARITY | Teams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="teams.css">
+    <script src="script.js"></script>
+    <style>body { background-color: #000; }</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><img src="assets/Logo.png" alt="Logo" class="logo"></div>
+            <input type="checkbox" id="sidebar-toggle">
+            <label for="sidebar-toggle" class="open-sidebar-button">
+                <svg width="40" height="30" viewBox="0 0 24 24"><path d="M5,7h2h12c1.1,0,2-0.9,2-2s-0.9-2-2-2H7H5C3.9,3,3,3.9,3,5S3.9,7,5,7z" fill="white"></path><path d="M19,10h-3H5c-1.1,0-2,0.9-2,2s0.9,2,2,2h11h3c1.1,0,2-0.9,2-2S20.1,10,19,10z" fill="white"></path><path d="M19,17h-6H5c-1.1,0-2,0.9-2,2s0.9,2,2,2h8h6c1.1,0,2-0.9,2-2S20.1,17,19,17z" fill="white"></path></svg>
+            </label>
+            <div class="sidebar">
+                <div>
+                    <label for="sidebar-toggle" class="close-sidebar-button">
+                        <svg width="35" height="35" viewBox="0 0 72 72"><path d="M 19 15 C 17.977 15 16.951875 15.390875 16.171875 16.171875 C 14.609875 17.733875 14.609875 20.266125 16.171875 21.828125 L 30.34375 36 L 16.171875 50.171875 C 14.609875 51.733875 14.609875 54.266125 16.171875 55.828125 C 16.951875 56.608125 17.977 57 19 57 C 20.023 57 21.048125 56.609125 21.828125 55.828125 L 36 41.65625 L 50.171875 55.828125 C 51.731875 57.390125 54.267125 57.390125 55.828125 55.828125 C 57.391125 54.265125 57.391125 51.734875 55.828125 50.171875 L 41.65625 36 L 55.828125 21.828125 C 57.390125 20.266125 57.390125 17.733875 55.828125 16.171875 C 54.268125 14.610875 51.731875 14.609875 50.171875 16.171875 L 36 30.34375 L 21.828125 16.171875 C 21.048125 15.391875 20.023 15 19 15 z" fill="white"></path></svg>
+                    </label>
+                    <a href="#">Home</a>
+                    <a href="#">Events</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Team</a>
+                    <a href="#">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="teams-container">
+        <h1 class="page-title">The Crew</h1>
+
+        <section class="department-section">
+            <h2 class="department-name">Core Committee</h2>
+            <div class="team-grid">
+                <div class="member-card" onclick="openModal(this)" data-desc="This is a brief description about this member's journey in astronomy.">
+                    <div class="member-image"><img src="assets/team/photo.jpg" alt="Member"></div>
+                    <div class="member-details-container">
+                        <span class="member-name">Member</span>
+                        <span class="member-role">Post</span>
+                        <span class="member-info">Roll No: 2xxx00x</span>
+                        <span class="member-info">xxxx@iiserkol.ac.in</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="department-section">
+            <h2 class="department-name">Technical & Radio Astronomy</h2>
+            <div class="team-grid">
+                <div class="member-card" onclick="openModal(this)" data-desc="Expertise in radio telescope construction and data analysis.">
+                    <div class="member-image"><img src="assets/team/photo.jpg" alt="Member"></div>
+                    <div class="member-details-container">
+                        <span class="member-name">Member</span>
+                        <span class="member-role">Post</span>
+                        <span class="member-info">Roll No: 2xxx00x</span>
+                        <span class="member-info">xxxx@iiserkol.ac.in</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="department-section">
+            <h2 class="department-name">Media & Design</h2>
+            <div class="team-grid">
+                <div class="member-card" onclick="openModal(this)" data-desc="Leading the visual identity and astrophotography showcases.">
+                    <div class="member-image"><img src="assets/team/photo.jpg" alt="Member"></div>
+                    <div class="member-details-container">
+                        <span class="member-name">Member</span>
+                        <span class="member-role">Post</span>
+                        <span class="member-info">Roll No: 2xxx00x</span>
+                        <span class="member-info">xxxx@iiserkol.ac.in</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="mImg" src="" style="width:120px; height:120px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+            <h2 id="mName"></h2>
+            <p id="mRole" class="member-role"></p>
+            <p id="mRoll" class="member-info"></p>
+            <p id="mMail" class="member-info"></p>
+            <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
+            <p id="mDesc" class="modal-desc"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <div>
+                <div>
+                    <div class="footer-title">SINGULARITY</div>
+                    <div class="social-media-handles">
+                        <p class="footer-heading">Follow us on</p>
+                        <a href="https://www.instagram.com/singularity_iiserk/">
+                            <i><img src="https://www.svgrepo.com/show/349410/instagram.svg"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://x.com/singularity_ik">
+                            <i><img style="filter: invert(100%)" src="https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"></i>
+                            <span>X</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/singularity-the-astronomy-club-of-iiser-kolkata-7538382a2/">
+                            <i><img src="https://www.svgrepo.com/show/349436/linkedin.svg"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.youtube.com/@SingularityIISERK">
+                            <i><img src="https://www.svgrepo.com/show/349577/youtube.svg"></i>
+                            <span>You Tube</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="quick-links">
+                    <p class="footer-heading">Quick Links</p>
+                    <a href="#"><span>Home</span></a>
+                    <a href="#"><span>Gallery</span></a>
+                    <a href="#"><span>Events</span></a>
+                    <a href="#"><span>Projects</span></a>
+                    <a href="#"><span>Blogs</span></a>
+                    <a href="#"><span>Team</span></a>
+                </div>
+            </div>
+            <div>
+                <div class="contact-us">
+                    <p class="footer-heading">Contact</p>
+                    <a href="" class="address"><span>IISER Kolkata, Nadia, WB - 741 246</span></a>
+                    <a href="mailto:singularity@iiserkol.ac.in" class="email"><span>singularity@iiserkol.ac.in</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights">© All copyrights reserved (2025) by Singularity</div>
+    </footer>
+
+    <script>
+        function openModal(card) {
+            const overlay = document.getElementById('modalOverlay');
+            document.getElementById('mName').innerText = card.querySelector('.member-name').innerText;
+            document.getElementById('mRole').innerText = card.querySelector('.member-role').innerText;
+            document.getElementById('mRoll').innerText = card.querySelector('.member-info').innerText;
+            document.getElementById('mMail').innerText = card.querySelectorAll('.member-info')[1].innerText;
+            document.getElementById('mDesc').innerText = card.getAttribute('data-desc');
+            document.getElementById('mImg').src = card.querySelector('img').src;
+            
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
